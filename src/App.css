@@ -1,8 +1,11 @@
 .leaflet-container{
-  width: 100%;
-  height: 100vh
+  width: 80%;
+  height: 100vh;
+  position: absolute;
+
 }
 
+/*Fix for bug with leaflet, eliminates white lines between tiles*/
 .leaflet-tile-container img {
   width: 256.5px !important;
   height: 256.5px !important;

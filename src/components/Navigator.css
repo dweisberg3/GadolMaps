@@ -1,0 +1,20 @@
+.navigator{
+    height: 100vh;
+    background:rgb(247, 250, 247);
+    float:right;
+    width: 20%; 
+    
+    
+   
+  border-radius: 12px;
+  padding: 5px;
+    
+}
+
+ul.nav.nav-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
