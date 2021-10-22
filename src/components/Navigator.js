@@ -3,8 +3,6 @@ import { LeafletEventHandlerFnMap, Map } from 'leaflet';
 import './Navigator.css'
 import {Tab, Tabs, ListGroup} from 'react-bootstrap'
 import { MapContainer, TileLayer, Marker, Popup, useMap} from 'react-leaflet';
-
-import NavigatorTab from './NavigatorTab'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const data = [
