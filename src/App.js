@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Icon , L} from 'leaflet';
-import { MapContainer, TileLayer, Marker, Popup, MapConsumer } from 'react-leaflet';
+import { Icon } from 'leaflet';
+import { MapContainer, TileLayer, Marker, Popup, MapConsumer, Tooltip, useMap } from 'react-leaflet';
 import "./App.css";
 import Navigator from './components/Navigator.js';
 import GadolBox from './components/GadolBox';
+import HorizontalLinearStepper from './components/infoBar.js';
+import MapItems from './components/MapItems';
 
 
 const rishonim = [
@@ -24,7 +26,7 @@ const rishonim = [
     "Year Born": 1013,
     "Year Died": 1103,
     "Teachers": ["Nissim ben Yacov", "Chananel ben Chushiel"],
-    "Students": ["Yoseph ibn Migash", "Yudah Halevi"],
+    "Students": ["Yoseph ibn Migash", "Yehudah Halevi"],
     "Works": ["Sefer Hahalacha"]
   },
   {
@@ -54,7 +56,7 @@ const rishonim = [
     "Year Born": 1235,
     "Year Died": 1310,
     "Teachers": ["Ramban","Rabbeinu Yonah"],
-    "Students": ["Ritva", "Rabbeinu Bachya"],
+    "Students": ["Rif","Ritva", "Rabbeinu Bachya"],
     "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
   },
   {
@@ -72,8 +74,8 @@ const rishonim = [
     "Position": [48.51856, 4.2938],
     "Year Born": 1100,
     "Year Died": 1171,
-    "Teachers": ["Rashbam","R' Meir ben Shmuel"],
-    "Students": [""]
+    "Teachers": ["Rambam","Rif"],
+    "Students": ["Rashba","Rashi"]
   },
   
 ]
@@ -137,28 +139,73 @@ function App() {
     setCenter(gadol.Position);
     
   }
+  let teachers = ""
+  let students = ""
+  if(rishonim.includes(currentGadol)){
+     teachers = rishonim.filter(gadol => gadol.Students.includes(currentGadol.Name))
+   students = rishonim.filter(gadol => gadol.Teachers.includes(currentGadol.Name))
+  }
+  else if (achronim.includes(currentGadol)) {
+     teachers = achronim.filter(gadol => gadol.Students.includes(currentGadol.Name))
+    students = achronim.filter(gadol => gadol.Teachers.includes(currentGadol.Name))
+  } 
+ 
+
+  const redIcon = new Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+
+  const greenIcon = new Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+
+  console.log(greenIcon)
 
   return (
     <>
+  
+  
        <Navigator getGadol = {getGadol} rishonim = {rishonim} achronim = {achronim} />
-       <GadolBox  currentGadol = {currentGadol} getGadol = {getGadol} allGadols = {rishonim}/>
-    <MapContainer center={currentPosition} zoom={5}>  <MapConsumer>
-        {(map) => {
-          map.flyTo(currentPosition,5,{ duration: 1.75, easeLinearity: 0.05 })
-         
-          return <Marker position={currentPosition}>
-          <Popup> {currentGadol.Name} </Popup>
-          
-          </Marker>
-        }}
-      
-
-
-      </MapConsumer>
-      <TileLayer
+     
+       <GadolBox  currentGadol = {currentGadol} getGadol = {getGadol} teachers = {teachers} students = {students}/>
+    <MapContainer center={currentPosition} zoom={3}> 
+    <TileLayer
         url="https://api.mapbox.com/styles/v1/dweisb/ckuyvslt608od14o4h0cqpblf/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZHdlaXNiIiwiYSI6ImNrdGQzZzQ2aTBicGEyb3BoZjI1YjNwaGkifQ.9LTCnUZDmffDzf7BzqVq5w"
         attribution='Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
       />
+        {/* {(map) => {
+          map.flyTo(currentPosition,5,{ duration: 1.75, easeLinearity: 0.05 })
+         
+          return <Marker position={currentPosition}>
+          <Tooltip>{currentGadol.Name}  </Tooltip>            
+          </Marker>}} */}
+           
+          {/* {() => currentGadol.Teachers.map((teacher) => {
+              return <Marker position={teacher.Position} icon = {redIcon}>
+              <Tooltip>{teacher}  </Tooltip>  
+              
+              </Marker>
+          })} 
+
+             {() => currentGadol.Students.map((student) => {
+              return <Marker position={student.Position} icon = {greenIcon}>
+              <Tooltip>{student}  </Tooltip>  
+              
+              </Marker>
+          })}  */}
+         <MapItems currentGadol= {currentGadol}  teachers = {teachers} students = {students} position = {currentPosition}/> 
+      
+      
       
    
      {/* { data.map((gadol) => {return <Marker position={gadol.Position}><Popup> {gadol.Name} </Popup></Marker>;})}  */}
