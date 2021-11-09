@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Icon , L,  Layer} from 'leaflet';
-import { MapContainer, TileLayer, Marker, Popup, MapConsumer, Tooltip, useMap } from 'react-leaflet';
+import  L,  { Icon , Layer, Polyline} from 'leaflet';
+import { TileLayer, Marker, Popup, Tooltip, useMap } from 'react-leaflet';
+import "leaflet-polylinedecorator";
+import './Legend.css'
+import ArrowheadsPolyline from './ArrowheadsPolyline.js';
 
 
 
-export default function MapItems({currentGadol, teachers, students, position}) {
+export default function MapItems({currentGadol, teachers, students, position, gadolInfoCounter, isNewGadol}) {
+
 
 
     const redIcon = new Icon({
@@ -25,17 +29,54 @@ export default function MapItems({currentGadol, teachers, students, position}) {
         shadowSize: [41, 41]
       });
 
+      // let teachersLatPositions = teachers.((teacher) =>  teacher.Position[0])
+      // let studentsLatPositions = students.map((student) =>{return student.Position[0]})
+      // console.log(teachersLatPositions)
+      // studentsLatPositions.push(position[0])
+      // teachersLatPositions.push(position[0])
+      // const maxLatTeacher = Math.max(teachersLatPositions)
+      // const minLatTeacher = Math.min(teachersLatPositions)
+      // const maxLatStudent = Math.max(studentsLatPositions)
+      // const minLatStudent = Math.min(studentsLatPositions)
+
 
       const map = useMap()
-     console.log(currentGadol.Name)
+      let polyLineCordinates = []
+      console.log(gadolInfoCounter)
+      for (let i = 0; i <= gadolInfoCounter; i++) {
+        polyLineCordinates.push(currentGadol.Locations[i][0])
+        console.log(currentGadol.Locations[i][0])
+      }
+      console.log(polyLineCordinates)
+
+      // useEffect(() => {
+      //   if (map) {
+      //     const legend = L.control({ position: "bottomright" });
+    
+      //     legend.onAdd = () => {
+      //       const div = L.DomUtil.create("div", "info legend");
+      //       div.innerHTML =
+      //         "<img src= '/green-marker.png'>" +
+      //         "<b>Lorem ipsum dolor sit amet consectetur adipiscing</b>";
+      //       return div;
+      //     };
+    
+      //     legend.addTo(map);
+      //   }
+      // }, [map]); //here add map
+      
+      const polycords =  [[37.88472, -4.77913],[30.044420,31.235712]]
+      
      map.flyTo(position,5,{ duration: 1.75, easeLinearity: 0.05})
-    //  map.setZoom(4)
+
+    console.log(isNewGadol)
      console.log(teachers)
      console.log(students)
      
       return ( 
             <div>
               <Marker position={position}>
+                {/* <Polyline>{polyLineCordinates}</Polyline> */}
                 {teachers!= "" ?  teachers.map((teacher) => {
               return <Marker position={teacher.Position} icon = {redIcon}>
               <Tooltip>{teacher.Name}  </Tooltip>  
@@ -50,7 +91,7 @@ export default function MapItems({currentGadol, teachers, students, position}) {
               <Tooltip>{student.Name}  </Tooltip>  
               
               </Marker> }):null}
-
+             <ArrowheadsPolyline positions={ polyLineCordinates } arrowheads={{ size: '2%'}}/> 
             </div>)
     } 
   

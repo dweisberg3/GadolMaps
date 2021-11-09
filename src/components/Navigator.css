@@ -1,13 +1,13 @@
 .navigator{
-    height: 100vh;
+    height: 90vh;
     background:rgb(247, 250, 247);
-    float:right;
-    width: 20%; 
-    
-    
-   
-  border-radius: 12px;
+    float:left;
+    left: 0;
+    width: 14%;    
+    border-radius: 12px;
   padding: 5px;
+  position: absolute;
+  z-index: 1000;
     
 }
 

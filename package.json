@@ -11,11 +11,13 @@
     "@testing-library/user-event": "^12.8.3",
     "bootstrap": "^5.1.1",
     "leaflet": "^1.7.1",
+    "leaflet-polylinedecorator": "^1.6.0",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.1",
     "react-dom": "^17.0.2",
     "react-leaflet": "^3.2.2",
+    "react-leaflet-arrowheads": "^1.1.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },

@@ -1,7 +1,30 @@
-.gadolbox{
+/* .gadolbox{
     height: 100vh;
     background:rgb(206, 218, 206);
     float: right;
     width: 20%;
     
+} */
+
+.gadolbox{
+    height: 75vh;
+    background:rgb(247, 250, 247);
+    float:right;
+    right: 0;
+    width: 20%;    
+    border-radius: 12px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1000;
+    
+}
+
+.gadolName{
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.gadolFact{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
