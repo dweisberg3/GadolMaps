@@ -1,6 +1,7 @@
 import { AccordionActions } from '@mui/material'
+import { Button } from '@mui/material';
 import React from 'react'
-import {Card, Tab, Tabs, ListGroup, Accordion, Button} from 'react-bootstrap'
+import {Card, Tab, Tabs, ListGroup, Accordion, ToggleButton} from 'react-bootstrap'
 
 import './GadolBox.css'
 import { useState } from 'react'
@@ -8,28 +9,33 @@ import { useState } from 'react'
 export default function GadolBox({currentGadol, getGadol, allGadols, teachers, students, getTimeLinePosition, gadolInfoCounter, increaseGadolInfoCounter}) {
 
   
-  const [currentFact, setCurrentFact] = useState(currentGadol.Locations[0][0])
-  const [currentFactCount, setcurrentFactCount] = useState(gadolInfoCounter)
-  // const teachers = allGadols.map(gadol => { if(gadol.Students.includes(currentGadol.Name)); return gadol})
+  
+    // const teachers = allGadols.map(gadol => { if(gadol.Students.includes(currentGadol.Name)); return gadol})
   // const teachers = allGadols.filter(gadol => gadol.Students.includes(currentGadol.Name))
   // const students = allGadols.filter(gadol => gadol.Teachers.includes(currentGadol.Name))
   // const teachers = allGadols.map(gadol => { if(gadol.Students.includes(currentGadol.Name)) ;return gadol})
-  console.log(teachers)
- console.log(gadolInfoCounter)
+  // console.log(teachers)
+ 
 //  setCurrentFact(currentGadol.Locations[1][1])
   // console.log(isNewGadol)
   //   if(isNewGadol){
   //     // setcurrentFactCount(0)
   //   }
-   
-    
+  //  console.log(currentFactCount)
+  //  console.log(currentGadol.Locations.length)
+  // if(currentFactCount >= currentGadol.Locations.length){
+  //   setcurrentFactCount(0)
+  //   console.log(currentFactCount)
+  // }
+
+ 
     return (
      
       <Card className = "gadolbox">
       <Card.Body>  
            <Card.Title style={{ color: "green" }}>{currentGadol.Name}</Card.Title> 
            <Card.Text>
-           {currentGadol.Locations[currentFactCount][1]}
+           {currentGadol.Locations[gadolInfoCounter][1]}
           </Card.Text>
             </Card.Body>
 <Accordion>
@@ -69,9 +75,11 @@ export default function GadolBox({currentGadol, getGadol, allGadols, teachers, s
   
 </Accordion>
 
-<Button onClick={() => {setcurrentFactCount(currentFactCount + 1) ; getTimeLinePosition(currentGadol.Locations[currentFactCount+1][0]); increaseGadolInfoCounter(currentFactCount +1)} }>next</Button>
 
+
+<Button variant="contained" disabled = {!(gadolInfoCounter < currentGadol.Locations.length - 1)} onClick={gadolInfoCounter < currentGadol.Locations.length - 1 ? () => {    increaseGadolInfoCounter(gadolInfoCounter +1) } : null} >next</Button>
 </Card>
+// getTimeLinePosition(currentGadol.Locations[currentFactCount+1][0])
 
 //       <div className = "gadolbox">
 //         <Card style={{ width: '18rem' }}>

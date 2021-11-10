@@ -164,9 +164,9 @@ function App() {
 
 
 
-  const getTimeLinePosition = (timeLinePosition) => {
-    setCurrentPosition(timeLinePosition);
-  }
+  // const getTimeLinePosition = (timeLinePosition) => {
+  //   setCurrentPosition(timeLinePosition);
+  // }
   let teachers = ""
   let students = ""
   if(rishonim.includes(currentGadol)){
@@ -185,7 +185,7 @@ function App() {
     
        <Navigator getGadol = {getGadol} rishonim = {rishonim} achronim = {achronim} />
      
-       <GadolBox  currentGadol = {currentGadol} getGadol = {getGadol} teachers = {teachers} students = {students} getTimeLinePosition = {getTimeLinePosition} gadolInfoCounter = {gadolInfoCounter} increaseGadolInfoCounter = {increaseGadolInfoCounter}/>
+       <GadolBox  currentGadol = {currentGadol} getGadol = {getGadol} teachers = {teachers} students = {students} gadolInfoCounter = {gadolInfoCounter} increaseGadolInfoCounter = {increaseGadolInfoCounter}/>
     <MapContainer center={currentPosition} zoom={5}> 
     <TileLayer
         url="https://api.mapbox.com/styles/v1/dweisb/ckuyvslt608od14o4h0cqpblf/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZHdlaXNiIiwiYSI6ImNrdGQzZzQ2aTBicGEyb3BoZjI1YjNwaGkifQ.9LTCnUZDmffDzf7BzqVq5w"

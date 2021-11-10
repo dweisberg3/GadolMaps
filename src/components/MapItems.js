@@ -7,7 +7,7 @@ import ArrowheadsPolyline from './ArrowheadsPolyline.js';
 
 
 
-export default function MapItems({currentGadol, teachers, students, position, gadolInfoCounter, isNewGadol}) {
+export default function MapItems({currentGadol, teachers, students, gadolInfoCounter, isNewGadol}) {
 
 
 
@@ -38,7 +38,8 @@ export default function MapItems({currentGadol, teachers, students, position, ga
       // const minLatTeacher = Math.min(teachersLatPositions)
       // const maxLatStudent = Math.max(studentsLatPositions)
       // const minLatStudent = Math.min(studentsLatPositions)
-
+     
+      const position = currentGadol.Locations[gadolInfoCounter][0]
 
       const map = useMap()
       let polyLineCordinates = []
@@ -48,6 +49,7 @@ export default function MapItems({currentGadol, teachers, students, position, ga
         console.log(currentGadol.Locations[i][0])
       }
       console.log(polyLineCordinates)
+      console.log(gadolInfoCounter)
 
       // useEffect(() => {
       //   if (map) {
