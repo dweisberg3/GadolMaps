@@ -1,0 +1,47 @@
+[
+  {
+    "Name": "Maharal",
+    "City": "Prague",
+    "Locations": [[[50.075539, 14.4378], "Born in 1512"]],
+    "Facts" : [],
+    "Year Born": 1512,
+    "Year Died": 1609,
+    "Teachers": [],
+    "Students": [],
+    "Works" : []
+  },
+  {
+    "Name": "Vilna Gaon",
+    "City": "Vilna",
+    "Locations": [[[54.687157, 25.279652], "Born in 1720"]],
+    "Facts" : [],
+    "Year Born": 1720,
+    "Year Died": 1796,
+    "Teachers": [],
+    "Students": [],
+    "Works" : []
+  },
+  {
+    "Name": "Maharsha",
+    "City": "Ostra",
+    "Locations": [[[50.329048, 26.52492], "Born in 1555"]],
+    "Facts" : [],
+    "Year Born": 1555,
+    "Year Died": 1631,
+    "Teachers": [],
+    "Students": [],
+    "Works" : []
+  },
+  {
+    "Name": "Rema",
+    "City": "Krakow",
+    "Locations": [[[50.05481, 19.92784], "Born in 1530"]],
+    "Facts" : [],
+    "Year Born": 1530,
+    "Year Died": 1572,
+    "Teachers": [],
+    "Students": [],
+    "Works" : []
+  }
+]
+  
