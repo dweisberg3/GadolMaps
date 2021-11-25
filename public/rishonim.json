@@ -1,26 +1,57 @@
 [
-
   {
     "Name": "Rabbeunu Geshom",
     "City": "Metz",
-    "Locations": [[[34.059769, -4.96531], "Born in Metz, France in 960"], [[]], "Died in Mainz, Germany in 1040"],
-    "Facts" : [],
+    "Locations": [
+      [[34.059769, -4.96531], "Born in Metz, France in 960"],
+      [[], "Died in Mainz, Germany in 1040"]
+    ],
+    "Overview": 
+      "Made enacments that were adopted by virtual all Jewish communites: Ban against polygamy, Ban against divorce without wife's consent"
+    ,
     "Year Born": 960,
     "Year Died": 1040,
     "Teachers": ["R' Yehudah Leontin"],
-    "Students": ["R' Yaakov ben Yakar", "R' Yitzchak HaLevi", "R' Yitzchak ben Yehudah", "R' Eliezer HaGadol"],
+    "Students": [
+      "R' Yaakov ben Yakar",
+      "R' Yitzchak HaLevi",
+      "R' Yitzchak ben Yehudah",
+      "R' Eliezer HaGadol"
+    ],
     "Works": ["Sefer Hahalacha"]
+  },
+  {
+    "Name": "Rashi",
+    "City": "Troyes",
+    "Locations": [[[48.29752, 4.07471], ""]],
+    "Overview": "",
+    "Year Born": 1040,
+    "Year Died": 1105,
+    "Teachers": ["Rabbeinu Gershom Me'or HaGolah", "R' Yaakov ben Yakar"],
+    "Students": ["Rabbeinu Tam", "Rivan", "R' Meir ben Shmuel"],
+    "Works": ["Commentary on the Torah", "Commentary on the Talmud"]
+  },
+  {
+    "Name": "Ibn Ezra",
+    "City": "Cordova",
+    "Locations": [[[37.88472, -4.77913], ""]],
+    "Overview": "",
+    "Year Born": 1089,
+    "Year Died": 1164,
+    "Teachers": ["Rashi", "R' Shlomo of Montpellier"],
+    "Students": ["Rashba"],
+    "Works": []
   },
   {
     "Name": "Rabbeinu Tam",
     "City": "Ramerupt",
     "Locations": [[[48.51856, 4.2938], "Rabbeinu Tam lived here"]],
-    "Facts" : [],
+    "Overview": "",
     "Year Born": 1100,
     "Year Died": 1171,
-    "Teachers": ["Rambam", "Rif"],
-    "Students": ["Rashba", "Rashi"],
-    "Works" : []
+    "Teachers": ["Rambam", "Rif", "Rashi", "R' Shlomo of Montpellier"],
+    "Students": ["Rashba"],
+    "Works": []
   },
   {
     "Name": "Rambam",
@@ -30,33 +61,23 @@
       [[30.04442, 31.235712], "He died in Cairo"],
       [[50.329048, 26.52492], "Born in 1555"]
     ],
-    "Facts" : [],
+    "Overview": "",
     "Year Born": 1138,
     "Year Died": 1205,
     "Teachers": ["R' Maimon ben Yosef HaDayan"],
-    "Students": [],
-    "Works": ["Sefer HaMitzvos", "Commentary on the Mishnah", "Yad HaChazakah"]
-  },
-  {
-    "Name": "Rambam",
-    "City": "Cordova, Spain",
-    "Locations": [
-      [[37.88472, -4.77913], "Rambam was born here"],
-      [[30.04442, 31.235712], "He died in Cairo"],
-      [[50.329048, 26.52492], "Born in 1555"]
-    ],
-    "Facts" : [],
-    "Year Born": 1138,
-    "Year Died": 1205,
-    "Teachers": ["R' Maimon ben Yosef HaDayan"],
-    "Students": [],
-    "Works": ["Sefer HaMitzvos", "Commentary on the Mishnah", "Yad HaChazakah"]
+    "Students": ["R' Avraham ben HaRambam"],
+    "Works": [
+      "Sefer HaMitzvos",
+      "Commentary on the Mishnah",
+      "Yad HaChazakah",
+      "Moreh Nevuchim"
+    ]
   },
   {
     "Name": "Rabbeinu Yonah",
     "City": "Gerona, Spain",
     "Locations": [[[38.919971, -6.9428], "Rabbeinu Yonah Lived here"]],
-    "Facts" : [],
+    "Overview": "",
     "Year Born": 1180,
     "Year Died": 1263,
     "Teachers": ["R' Shlomo of Montpellier"],
@@ -66,24 +87,72 @@
   {
     "Name": "Ramban",
     "City": "Gerona, Spain",
-    "Locations": [[[38.919971, -6.9428, "Ramban was born here"]], [[32.93260, 35.07899], "Moved to Acco in Eretz Israel in 1267 at the age of 72"]],
-    "Facts" : [],
+    "Locations": [
+      [[38.919971, -6.9428, "Ramban was born here"]],
+      [
+        [32.9326, 35.07899],
+        "Moved to Acco in Eretz Israel in 1267 at the age of 72"
+      ]
+    ],
+    "Overview": "",
     "Year Born": 1194,
     "Year Died": 1270,
-    "Teachers": ["R' Yehuda ben Yakar"],
+    "Teachers": ["R' Shlomo of Montpellier", "R' Yehuda ben Yakar"],
     "Students": ["Rashba"],
     "Works": ["Chidushim al HaShas", "Commentary on the Torah"]
+  },
+  {
+    "Name": "Rif",
+    "City": "Fez",
+    "Locations": [[[34.059769, -4.96531], ""]],
+    "Overview": "",
+    "Year Born": 1013,
+    "Year Died": 1103,
+    "Teachers": ["Nissim ben Yacov", "Chananel ben Chushiel"],
+    "Students": ["Yoseph ibn Migash", "Yehudah Halevi"],
+    "Works": ["Sefer Hahalacha"]
+  },
+  {
+    "Name": "Ritva",
+    "City": "Seville, Spain",
+    "Locations": [[[37.389091, -5.984459], ""]],
+    "Overview": "",
+    "Year Born": 1013,
+    "Year Died": 1103,
+    "Teachers": ["Rashba"],
+    "Students": [],
+    "Works": ["Sefer Hahalacha"]
   },
   {
     "Name": "Rashba",
     "City": "Barcelona",
     "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
-    "Facts" : [],
+    "Overview": "",
     "Year Born": 1235,
     "Year Died": 1310,
     "Teachers": ["Ramban", "Rabbeinu Yonah"],
     "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
     "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+  },
+
+  {
+    "Name": "Rambam",
+    "City": "Cordova, Spain",
+    "Locations": [
+      [[37.88472, -4.77913], "Rambam was born here"],
+      [[30.04442, 31.235712], "He died in Cairo"],
+      [[50.329048, 26.52492], "Born in 1555"]
+    ],
+    "Overview": "",
+    "Year Born": 1138,
+    "Year Died": 1205,
+    "Teachers": ["R' Maimon ben Yosef HaDayan"],
+    "Students": ["R' Avraham ben HaRambam"],
+    "Works": [
+      "Sefer HaMitzvos",
+      "Commentary on the Mishnah",
+      "Yad HaChazakah",
+      "Moreh Nevuchim"
+    ]
   }
- 
 ]

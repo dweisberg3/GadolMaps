@@ -3,7 +3,7 @@
     background:rgb(247, 250, 247);
     float:left;
     left: 0;
-    width: 14%;    
+    width: 18%;    
     border-radius: 12px;
   padding: 5px;
   position: absolute;
@@ -17,4 +17,20 @@ ul.nav.nav-tabs {
     align-items: center;
     flex-wrap: wrap;
     padding: 10px;
+    
+    
+}
+
+.list-group{
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+  
+}
+
+.list-group-item{
+  background-color: white !important;
+  color:white;
+  border: none;
 }
