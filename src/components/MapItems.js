@@ -47,19 +47,19 @@ export default function MapItems({
 
   useEffect(() => {
     
-    map.setMaxZoom(6);
+    map.setMaxZoom(7);
     map.setMinZoom(4);
     map.setMaxBounds([
       [8.12884, -49.72852],
       [66.28807, 76.55273],
     ]);
 
-    L.control
-      .zoom({
-        position: "bottomright",
-      })
+    // L.control
+    //   .zoom({
+    //     position: "bottomright",
+    //   })
     
-      .addTo(map);
+      // .addTo(map);
   }, [map]); //here add map
 
  

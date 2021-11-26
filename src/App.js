@@ -1,10 +1,6 @@
 import React, { useState, useEffect} from "react";
 
-import {
-  MapContainer,
-  TileLayer,
-  
-} from "react-leaflet";
+import {  MapContainer,  TileLayer, ZoomControl } from "react-leaflet";
 import "./App.css";
 import Navigator from "./components/Navigator.js";
 import GadolBox from "./components/GadolBox";
@@ -132,11 +128,12 @@ const App = () => {
           increaseGadolInfoCounter={increaseGadolInfoCounter}
           decreaseGadolInfoCounter={decreaseGadolInfoCounter}
         />
-        <MapContainer center={currentPosition} zoom={5}>
+        <MapContainer center={currentPosition} zoom={5} zoomControl = {false}>
           <TileLayer
             url="https://api.mapbox.com/styles/v1/dweisb/ckuyvslt608od14o4h0cqpblf/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZHdlaXNiIiwiYSI6ImNrdGQzZzQ2aTBicGEyb3BoZjI1YjNwaGkifQ.9LTCnUZDmffDzf7BzqVq5w"
             attribution='Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
           />
+          <ZoomControl position="bottomright"  />
 
           <MapItems
             currentGadol={currentGadol}

@@ -20,7 +20,7 @@ import TabPanel from '@mui/lab/TabPanel';
 function Navigator({ getGadol, rishonim, achronim, currentGadol }) {
 
 
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
