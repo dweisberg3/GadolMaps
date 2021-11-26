@@ -24,6 +24,8 @@ const handleChange = (panel) => (event, isExpanded) => {
 };
 
 
+
+
   return ( <Card className = "gadolbox" sx={{ minWidth: 375 }}>
     <CardContent>
       <Typography sx={{ fontSize: 30 }} color="text.primary" gutterBottom>
@@ -31,7 +33,7 @@ const handleChange = (panel) => (event, isExpanded) => {
       </Typography>
       
       <Typography sx={{ fontSize: 15 }} color="text.secondary">
-        R' Moshe Bein Msdf
+        {currentGadol.Fullname}
       </Typography>
       <Typography sx={{ mb: 1.5 }} color="text.secondary">
         {currentGadol.Overview}
