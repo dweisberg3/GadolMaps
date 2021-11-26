@@ -1,10 +1,14 @@
-import { AccordionActions } from '@mui/material'
-import { Button } from '@mui/material';
+import { ListItem } from '@mui/material'
+import {  Button, Typography, CardContent, CardActions} from '@mui/material';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ListItemText from '@mui/material/ListItemText';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react'
-import {Card, Tab, Tabs, ListGroup, Accordion, ToggleButton} from 'react-bootstrap'
-
+import {Card} from 'react-bootstrap'
 import './GadolBox.css'
-import { useState } from 'react'
+
 
 export default function GadolBox({
   currentGadol,
@@ -13,139 +17,124 @@ export default function GadolBox({
   decreaseGadolInfoCounter
 }) {
 
-  
-  return (
-    <Card className="gadolbox">
-      <Card.Body>
-        <Card.Title style={{ color: "green" }}>{currentGadol.Name}</Card.Title>
-        <Card.Text>{currentGadol.Locations[gadolInfoCounter][1]}</Card.Text>
-      </Card.Body>
-      <Accordion>
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Teachers</Accordion.Header>
-          <Accordion.Body>
-            <ListGroup variant="flush">
-              {" "}
-              {currentGadol.Teachers != ""
+const [expanded, setExpanded] = React.useState(false);
+
+const handleChange = (panel) => (event, isExpanded) => {
+  setExpanded(isExpanded ? panel : false);
+};
+
+
+  return ( <Card className = "gadolbox" sx={{ minWidth: 375 }}>
+    <CardContent>
+      <Typography sx={{ fontSize: 30 }} color="text.primary" gutterBottom>
+      {currentGadol.Name}
+      </Typography>
+      
+      <Typography sx={{ fontSize: 15 }} color="text.secondary">
+        R' Moshe Bein Msdf
+      </Typography>
+      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+        {currentGadol.Overview}
+      </Typography>
+      <Card sx={{ minWidth: 375 , mb: 50 }}>
+        <CardContent>
+        <Typography sx={{ mb: 1.5 }} color="text.primary" align="center">
+        TimeLine
+      </Typography>
+      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+      {currentGadol.Locations[gadolInfoCounter][1]}
+      </Typography>
+      <CardActions>
+        
+        <Button
+     variant="contained"
+     disabled={(gadolInfoCounter  == 0)}
+     onClick={
+        () => {
+             decreaseGadolInfoCounter()
+           }
+       
+     }
+   >
+     Back
+   </Button> 
+
+   <Button
+     variant="contained"
+     disabled={!(gadolInfoCounter < currentGadol.Locations.length - 1)}
+     onClick={
+       gadolInfoCounter < currentGadol.Locations.length - 1
+         ? () => {
+           increaseGadolInfoCounter();
+           }
+         : null
+     }
+   >
+     Next
+   </Button>
+ </CardActions>
+        </CardContent></Card>
+     
+      <Accordion expanded={expanded === 'panel1'} sx={{mt: 3 }} onChange={handleChange('panel1')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: '83%', flexShrink: 0 }}>
+            Teachers
+          </Typography>
+        
+        </AccordionSummary>
+        <AccordionDetails>
+        {currentGadol.Teachers != ""
                 ? currentGadol.Teachers.map((teacher) => {
                     return (
-                      <ListGroup.Item >
-                        {teacher}
-                      </ListGroup.Item>
-                    );
+                      <ListItem> <ListItemText>{teacher} </ListItemText> </ListItem>
+                   );
                   })
                 : null}
-               
-            </ListGroup>
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="2">
-          <Accordion.Header>Students</Accordion.Header>
-          <Accordion.Body>
-            <ListGroup variant="flush">
-              
-              {currentGadol.Students != ""
-                ? currentGadol.Students.map((student) => {
-                    return (
-                      <ListGroup.Item >
-                        {student}
-                      </ListGroup.Item>
-                    );
-                  })
-                : null}
-               
-            </ListGroup>
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="3">
-          <Accordion.Header>Works</Accordion.Header>
-          <Accordion.Body>
-            <ListGroup variant="flush">
-              
-             {currentGadol.Works != "" ? currentGadol.Works.map((work) => {
-               return ( <ListGroup.Item>
-               {work}
-             </ListGroup.Item>)})
-                : null}
-            </ListGroup>
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="4">
-          <Accordion.Header>Places Lived</Accordion.Header>
-          <Accordion.Body>
-            
-            
-            
-           
-          </Accordion.Body>
-        </Accordion.Item>
+        </AccordionDetails>
       </Accordion>
-
-      
-      <Button
-        variant="contained"
-        disabled={(gadolInfoCounter  == 0)}
-        onClick={
-           () => {
-                decreaseGadolInfoCounter()
-              }
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2bh-content"
+          id="panel2bh-header"
+        >
+          <Typography sx={{ width: '33%', flexShrink: 0 }}>Students</Typography>
+         
+        </AccordionSummary>
+        <AccordionDetails> 
           
-        }
-      >
-        Back
-      </Button>
+        
 
-      <Button
-        variant="contained"
-        disabled={!(gadolInfoCounter < currentGadol.Locations.length - 1)}
-        onClick={
-          gadolInfoCounter < currentGadol.Locations.length - 1
-            ? () => {
-              increaseGadolInfoCounter();
-              }
-            : null
-        }
-      >
-        Next
-      </Button>
+         
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel3bh-content"
+          id="panel3bh-header"
+        >
+          <Typography sx={{ width: '33%', flexShrink: 0 }}>
+           Works
+          </Typography>
+         
+        </AccordionSummary>
+        <AccordionDetails>
+        {currentGadol.Works != "" ? currentGadol.Works.map((work) => {
+               return ( <ListItem> <ListItemText>{work} </ListItemText> </ListItem>
+                ) }): null}
 
+        </AccordionDetails>
+      </Accordion>
      
-    </Card>
-    // getTimeLinePosition(currentGadol.Locations[currentFactCount+1][0])
-
-    //       <div className = "gadolbox">
-    //         <Card style={{ width: '18rem' }}>
-    //   <Card.Body>
-    //     <Card.Title>{currentGadol.Name}</Card.Title>
-    //     {/* {(map) => {
-    //           map.flyTo(currentPosition,5,{ duration: 1.75, easeLinearity: 0.05 })
-
-    //           return <Marker position={currentPosition}>
-    //           <Popup> {currentGadol.Name} </Popup>
-
-    //           </Marker>
-    //         }} */}
-    //     <Card.Subtitle className="mb-2 text-muted">{currentGadol.Teachers}</Card.Subtitle>
-    //     <Card.Text>
-    //     <Tabs defaultActiveKey="first">
-    //         <Tab  eventKey="first" title="Teachers">   <ListGroup variant = "flush"> {teachers != null ? teachers.map((teacher) => {
-    //               return  <ListGroup.Item action onClick={ () => getGadol(teacher)}>{teacher.Name}</ListGroup.Item>}) : null}
-    //       </ListGroup>
-
-    //         </Tab>
-    //         <Tab  eventKey="second" title="Students">   <ListGroup variant = "flush"> {students != null ? students.map((student) => {
-    //               return  <ListGroup.Item action onClick={ () => getGadol(student)}>{student.Name}</ListGroup.Item>}) : null}
-    //       </ListGroup>
-
-    //         </Tab>
-    //         </Tabs>
-
-    //     </Card.Text>
-    //     {/* <Card.Link href="#">Teachers</Card.Link>
-    //     <Card.Link href="#">Students</Card.Link> */}
-    //   </Card.Body>
-    // </Card>
-
-    // </div>
-  );
+    
+    </CardContent>
+  
+  </Card>)
+  
+  
 }

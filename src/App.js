@@ -1,13 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import L from "leaflet";
+import React, { useState, useEffect} from "react";
+
 import {
   MapContainer,
   TileLayer,
-  Marker,
-  Popup,
-  MapConsumer,
-  Tooltip,
-  useMap,
+  
 } from "react-leaflet";
 import "./App.css";
 import Navigator from "./components/Navigator.js";

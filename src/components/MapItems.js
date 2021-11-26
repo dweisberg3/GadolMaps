@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from "react";
-import L, { Icon, Layer, Polyline } from "leaflet";
-import {
-  TileLayer,
-  Marker,
-  Popup,
-  Tooltip,
-  useMap,
-  useMapEvents,
-} from "react-leaflet";
+import React, { useEffect } from "react";
+import L  from "leaflet";
+import { Marker,  useMap, Tooltip} from "react-leaflet";
 import "leaflet-polylinedecorator";
 import "./Legend.css";
 import ArrowheadsPolyline from "./ArrowheadsPolyline.js";
@@ -15,7 +8,7 @@ import ArrowheadsPolyline from "./ArrowheadsPolyline.js";
 export default function MapItems({
   currentGadol,
   gadolInfoCounter,
-  isNewGadol,
+  
 }) {
   // const redIcon = new Icon({
   //   iconUrl:
@@ -69,10 +62,7 @@ export default function MapItems({
       .addTo(map);
   }, [map]); //here add map
 
-  const polycords = [
-    [37.88472, -4.77913],
-    [30.04442, 31.235712],
-  ];
+ 
 
   map.flyTo(position, 5, { duration: 1.75, easeLinearity: 0.05 });
 
@@ -84,7 +74,7 @@ export default function MapItems({
   return (
     <div>
        <Marker position={position}>
-      
+      <Tooltip>{currentGadol.Name}</Tooltip>
       </Marker>
 
       <ArrowheadsPolyline

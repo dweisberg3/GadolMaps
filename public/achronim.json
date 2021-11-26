@@ -1,6 +1,7 @@
 [
   {
     "Name": "Maharal",
+    "Fullname": "",
     "City": "Prague",
     "Locations": [[[50.075539, 14.4378], "Born in 1512"]],
     "Overview": "",
@@ -12,6 +13,7 @@
   },
   {
     "Name": "Vilna Gaon",
+    "Fullname": "",
     "City": "Vilna",
     "Locations": [[[54.687157, 25.279652], "Born in 1720"]],
     "Overview": "",
@@ -23,6 +25,7 @@
   },
   {
     "Name": "Maharsha",
+    "Fullname": "",
     "City": "Ostra",
     "Locations": [[[50.329048, 26.52492], "Born in 1555"]],
     "Overview": "",
@@ -34,6 +37,7 @@
   },
   {
     "Name": "Rema",
+    "Fullname": "",
     "City": "Krakow",
     "Locations": [[[50.05481, 19.92784], "Born in 1530"]],
     "Overview": "",
