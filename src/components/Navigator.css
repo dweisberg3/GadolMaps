@@ -1,9 +1,9 @@
 .navigator{
-    height: 70vh;
+    height: 85vh;
     background:rgb(247, 250, 247);
     float:left;
     left: 0;
-    width: 18%;    
+    width: 15%;    
     /* border-radius: 12px;
   padding: 5px; */
   position: absolute;
@@ -33,4 +33,9 @@ ul.nav.nav-tabs {
   background-color: white !important;
   color:white;
   border: none;
+}
+
+.Mui-disabled{
+
+  background-color: darkblue;
 }

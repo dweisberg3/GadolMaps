@@ -1,0 +1,52 @@
+[
+    {
+      "Name": "מהר\"ל",
+      "Fullname": "R' Yehuda ben Betzalel Loew",
+      "City": "Prague",
+      "Locations": [[[50.075539, 14.4378], "Born in 1512"], [[50.075539, 14.4378], "Died in 1609"]],
+      "Overview": "",
+      "Year Born": 1512,
+      "Year Died": 1609,
+      "Teachers": [],
+      "Students": [],
+      "Works": []
+    },
+    {
+      "Name": "וילנא גאון",
+      "Fullname": "R' Eliyahu ben Shlomo",
+      "City": "Vilna",
+      "Locations": [[[54.687157, 25.279652], "Born in 1720"],[[54.687157, 25.279652], "Died in 1796"]],
+      "Overview": "",
+      "Year Born": 1720,
+      "Year Died": 1796,
+      "Teachers": [],
+      "Students": [],
+      "Works": []
+    },
+    {
+      "Name": "מהרש\"א",
+      "Fullname": "R' Shmuel Eidels",
+      "City": "Ostra",
+      "Locations": [[[50.05481, 19.92784], "Born in 1555 in Krakow"], [[52.400188, 16.927549], "Founded Yeshiva in Posen"],[[51.132660, 23.473761], "Was a Rabbi in Chelm"],[[51.246452, 22.568445], "Was a Rabbi in Lublin"],[[53.203056, 22.770833], "Was Rabbi in Tiktin"],
+      [[48.322770, 25.645900], "Was a Rabbi in Ostra and died in 1631"]],
+      "Overview": "",
+      "Year Born": 1555,
+      "Year Died": 1631,
+      "Teachers": [],
+      "Students": [],
+      "Works": ["Chiddushei Halachos", "Chiddushei Aggados"]
+    },
+    {
+      "Name": "רמ\"א",
+      "Fullname": "R' Moshe Isserles",
+      "City": "Krakow",
+      "Locations": [[[50.05481, 19.92784], "Born in 1530"], [[50.05481, 19.92784], "Died in 1572"]],
+      "Overview": "",
+      "Year Born": 1530,
+      "Year Died": 1572,
+      "Teachers": [],
+      "Students": [],
+      "Works": []
+    }
+  ]
+  

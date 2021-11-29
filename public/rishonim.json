@@ -1,6 +1,6 @@
 [
   {
-    "Name": "Rabbeunu Gershom",
+    "Name": "Rabbeinu Gershom",
     "Fullname": "",
     "City": "Metz",
     "Locations": [
@@ -23,7 +23,7 @@
   },
   {
     "Name": "Rashi",
-    "Fullname": "",
+    "Fullname": "R' Shlomo Yitzchaki",
     "City": "Troyes",
     "Locations": [[[48.29752, 4.07471], ""]],
     "Overview": "",
@@ -35,7 +35,7 @@
   },
   {
     "Name": "Ibn Ezra",
-    "Fullname": "",
+    "Fullname": "R' Abraham ben Meir Ibn Ezra",
     "City": "Cordova",
     "Locations": [[[37.88472, -4.77913], ""]],
     "Overview": "",
@@ -47,7 +47,7 @@
   },
   {
     "Name": "Rabbeinu Tam",
-    "Fullname": "",
+    "Fullname": "R' Yaakov ben Meir",
     "City": "Ramerupt",
     "Locations": [[[48.51856, 4.2938], "Rabbeinu Tam lived here"]],
     "Overview": "",
@@ -59,12 +59,12 @@
   },
   {
     "Name": "Rambam",
-    "Fullname": "",
+    "Fullname": "R' Moshe ben Maimon",
     "City": "Cordova, Spain",
     "Locations": [
       [[37.88472, -4.77913], "Rambam was born here"],
-      [[30.04442, 31.235712], "He died in Cairo"],
-      [[50.329048, 26.52492], "Born in 1555"]
+      [[30.04442, 31.235712], "He died in Cairo"]
+      
     ],
     "Overview": "",
     "Year Born": 1138,
@@ -144,26 +144,102 @@
     "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
     "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
   },
-
   {
-    "Name": "Rambam",
+    "Name": "Rashba",
     "Fullname": "",
-    "City": "Cordova, Spain",
-    "Locations": [
-      [[37.88472, -4.77913], "Rambam was born here"],
-      [[30.04442, 31.235712], "He died in Cairo"],
-      [[50.329048, 26.52492], "Born in 1555"]
-    ],
+    "City": "Barcelona",
+    "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
     "Overview": "",
-    "Year Born": 1138,
-    "Year Died": 1205,
-    "Teachers": ["R' Maimon ben Yosef HaDayan"],
-    "Students": ["R' Avraham ben HaRambam"],
-    "Works": [
-      "Sefer HaMitzvos",
-      "Commentary on the Mishnah",
-      "Yad HaChazakah",
-      "Moreh Nevuchim"
-    ]
+    "Year Born": 1235,
+    "Year Died": 1310,
+    "Teachers": ["Ramban", "Rabbeinu Yonah"],
+    "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
+    "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+  },
+  {
+    "Name": "Rashba",
+    "Fullname": "",
+    "City": "Barcelona",
+    "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
+    "Overview": "",
+    "Year Born": 1235,
+    "Year Died": 1310,
+    "Teachers": ["Ramban", "Rabbeinu Yonah"],
+    "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
+    "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+  },
+  {
+    "Name": "Rashba",
+    "Fullname": "",
+    "City": "Barcelona",
+    "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
+    "Overview": "",
+    "Year Born": 1235,
+    "Year Died": 1310,
+    "Teachers": ["Ramban", "Rabbeinu Yonah"],
+    "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
+    "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+  },
+  {
+    "Name": "Rashba",
+    "Fullname": "",
+    "City": "Barcelona",
+    "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
+    "Overview": "",
+    "Year Born": 1235,
+    "Year Died": 1310,
+    "Teachers": ["Ramban", "Rabbeinu Yonah"],
+    "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
+    "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+  },
+  {
+    "Name": "Rashba",
+    "Fullname": "",
+    "City": "Barcelona",
+    "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
+    "Overview": "",
+    "Year Born": 1235,
+    "Year Died": 1310,
+    "Teachers": ["Ramban", "Rabbeinu Yonah"],
+    "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
+    "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+  },
+  {
+    "Name": "Rashba",
+    "Fullname": "",
+    "City": "Barcelona",
+    "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
+    "Overview": "",
+    "Year Born": 1235,
+    "Year Died": 1310,
+    "Teachers": ["Ramban", "Rabbeinu Yonah"],
+    "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
+    "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+  },
+  {
+    "Name": "Rashba",
+    "Fullname": "",
+    "City": "Barcelona",
+    "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
+    "Overview": "",
+    "Year Born": 1235,
+    "Year Died": 1310,
+    "Teachers": ["Ramban", "Rabbeinu Yonah"],
+    "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
+    "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+  },
+  {
+    "Name": "Rashba",
+    "Fullname": "",
+    "City": "Barcelona",
+    "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
+    "Overview": "",
+    "Year Born": 1235,
+    "Year Died": 1310,
+    "Teachers": ["Ramban", "Rabbeinu Yonah"],
+    "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
+    "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
   }
+
+  
 ]

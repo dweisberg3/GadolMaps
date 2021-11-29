@@ -10,6 +10,10 @@ import MapItems from "./components/MapItems";
 const App = () => {
   const [rishonim, setRishonim] = useState([]);
   const [achronim, setAchronim] = useState([]);
+  const [hebrewRishonim, setHebrewRishonim] = useState([])
+  const [hebrewAchronim, setHebrewAchronim] = useState([])
+  const [englishRishonim, setEnglishRishonim] = useState([])
+  const [englishAchronim, setEnglishAchronim] = useState([])
   const [currentGadol, setCurrentGadol] = useState([]);
   const [currentPosition, setCurrentPosition] = useState([37.88472, -4.77913]);
   const [isNewGadol, setisNewGadol] = useState(false);
@@ -17,6 +21,9 @@ const App = () => {
   const [error, setError] = useState(null);
   const [achronimIsLoaded, setAchronimIsLoaded] = useState(false);
   const [rishonimIsLoaded, setRishonimIsLoaded] = useState(false);
+  const [hebrewAchronimIsLoaded, setHebrewAchronimIsLoaded] = useState(false);
+  const [hebrewRishonimIsLoaded, setHebrewRishonimIsLoaded] = useState(false);
+  const [language, setLanguage] = useState("english");
 
   const getGadol = (gadol) => {
     console.log(gadol.Name);
@@ -26,6 +33,22 @@ const App = () => {
     setGadolInfoCounter(0);
    
   };
+
+  const getLanguage = (pick) => {
+
+    if (pick === "hebrew") {
+      console.log("got to hebrew")
+      setRishonim(hebrewRishonim)
+      setAchronim(hebrewAchronim)
+      setLanguage("hebrew")
+    }
+    else if (pick === "english") {
+      console.log("got to english")
+      setRishonim(englishRishonim)
+      setAchronim(englishAchronim)
+      setLanguage("english")
+    } 
+  }
 
   // const filterTeachers = (currentGadol) => {
   //   // console.log(currentGadol)
@@ -82,6 +105,7 @@ const App = () => {
     })
       .then((res) => res.json())
       .then((result) => {
+        setEnglishRishonim(result)
         setRishonim(result);
         setCurrentGadol(result[3])
         setRishonimIsLoaded(true);
@@ -95,10 +119,35 @@ const App = () => {
     })
       .then((res) => res.json())
       .then((result) => {
+        setEnglishAchronim(result)
         setAchronim(result);
         setAchronimIsLoaded(true);
         
       });
+      fetch("./hebrewrishonim.json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          setHebrewRishonim(result);
+          setHebrewRishonimIsLoaded(true);
+          
+        });
+        fetch("./hebrewachronim.json", {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            setHebrewAchronim(result);
+            setHebrewAchronimIsLoaded(true);
+            
+          });
     // Note: it's important to handle errors here
     // instead of a catch() block so that we don't swallow
     // exceptions from actual bugs in components.
@@ -110,7 +159,7 @@ const App = () => {
 
   if (error) {
     return <div>Error: {error.message}</div>;
-  } else if (!rishonimIsLoaded || !achronimIsLoaded) {
+  } else if (!rishonimIsLoaded || !achronimIsLoaded  || !hebrewRishonimIsLoaded || !hebrewAchronimIsLoaded) {
     return <div>Loading...</div>;
   } else {
     return (
@@ -120,6 +169,8 @@ const App = () => {
           rishonim={rishonim}
           achronim={achronim}
           currentGadol={currentGadol}
+          getLanguage = {getLanguage}
+          language = {language}
         />
 
         <GadolBox
@@ -127,6 +178,7 @@ const App = () => {
           gadolInfoCounter={gadolInfoCounter}
           increaseGadolInfoCounter={increaseGadolInfoCounter}
           decreaseGadolInfoCounter={decreaseGadolInfoCounter}
+          language = {language}
         />
         <MapContainer center={currentPosition} zoom={5} zoomControl = {false}>
           <TileLayer
