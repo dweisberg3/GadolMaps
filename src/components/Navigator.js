@@ -129,8 +129,10 @@ const handleAlignment = (event, newAlignment) => {
                         disableRipple={true}
                         className={classes.root}
                         onClick={() => getGadol(gadol)}
+                        sx= {{fontSize : 15}}
                       >
                         {gadol.Name}
+                      
                       </ListItemButton>
                     ) : (
                       <ListItemButton
@@ -142,6 +144,7 @@ const handleAlignment = (event, newAlignment) => {
                           "&.MuiButtonBase-root:hover": {
                             bgcolor: "lightblue",
                           },
+                          fontSize : 15,
                         }}
                       >
                         {gadol.Name}
@@ -194,9 +197,9 @@ const handleAlignment = (event, newAlignment) => {
         </TabContext>
       </Box>
       <Typography align = "center" sx = {{p: 0, mt: 1}}>
-       <Link sx={{ fontSize: 12, mt : 0}} href="feedback@gadolmaps.com" underline="none">
+       {/* <Link sx={{ fontSize: 12, mt : 0}} href="feedback@gadolmaps.com" underline="none">
         {'feedback@gadolmaps.com'}
-      </Link>
+      </Link> */}
        </Typography>
        
        <Typography align = "center" sx={{ fontSize: 12 , p : 0 }} variant="body1" color="inherit">

@@ -36,8 +36,13 @@ const App = () => {
 
   const getLanguage = (pick) => {
 
+    const rishonIndex = englishRishonim.findIndex(({ Name }) => Name === currentGadol.Name);
+    const achronIndex = englishAchronim.findIndex(({ Name }) => Name === currentGadol.Name);
+     
     if (pick === "hebrew") {
+      
       console.log("got to hebrew")
+      
       setRishonim(hebrewRishonim)
       setAchronim(hebrewAchronim)
       setLanguage("hebrew")
@@ -97,7 +102,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch("./rishonim.json", {
+    fetch("./englishrishonim.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -111,7 +116,7 @@ const App = () => {
         setRishonimIsLoaded(true);
     
       });
-    fetch("./achronim.json", {
+    fetch("./englishachronim.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -163,7 +168,7 @@ const App = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <>
+      <div>
         <Navigator
           getGadol={getGadol}
           rishonim={rishonim}
@@ -194,7 +199,7 @@ const App = () => {
             isNewGadol={isNewGadol}
           />
         </MapContainer>
-      </>
+      </div>
     );
   }
 };

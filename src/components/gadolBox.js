@@ -10,7 +10,7 @@ import { Card } from "react-bootstrap";
 import "./GadolBox.css";
 
 
-const hebrewHeaders = ["ציר הזמן","חזור","הבא", "רבותיו","תלמידיו","ספריו"]
+const hebrewHeaders = ["תולדותיו","חזור","הבא", "רבותיו","תלמידיו","ספריו"]
 
   const englishHeaders = ["Timeline", "Back", "Next", "Teachers", "Students", "Works"]
 
@@ -38,11 +38,11 @@ export default function GadolBox({
   }, [language])
 
   
-
-
+console.log(currentGadol.Locations[gadolInfoCounter][1])
+console.log(gadolInfoCounter)
 
   return (
-    <Card className="gadolbox" sx={{ minWidth: 375 }}>
+    <Card className="gadolbox" >
       <CardContent>
         <Typography sx={{ fontSize: 30 }} color="text.primary" gutterBottom>
           {currentGadol.Name}
@@ -54,9 +54,9 @@ export default function GadolBox({
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {currentGadol.Overview}
         </Typography>
-        <Card sx={{maxHeight : 10, minWidth: 375,  mb : 0 , margin : 0, pt: 0}}>
+        <Card >
           <CardContent>
-            <Typography sx={{ mb: 1.5 }} color="text.primary" align="center">
+            <Typography sx={{ mb: 1 }} color="text.primary" align="center">
               {headers[0]}
             </Typography>
             <Typography sx={{ mb: 1.5 , fontSize : 13}} color="text.secondary">
