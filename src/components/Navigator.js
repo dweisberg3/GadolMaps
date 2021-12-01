@@ -109,8 +109,8 @@ const handleAlignment = (event, newAlignment) => {
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
-              <Tab label={headers[1]} value="1" />
-              <Tab label={headers[2]} value="2" />
+              <Tab sx = {{fontSize : 16, width : "50%"}} label={headers[1]} value="1" />
+              <Tab sx = {{fontSize : 16, width : "50%"}} label={headers[2]} value="2" />
             </TabList>
           </Box>
           <TabPanel
@@ -118,7 +118,7 @@ const handleAlignment = (event, newAlignment) => {
             index={0}
             style={{ maxHeight: 400, overflow: "auto" }}
           >
-            <List>
+            <List sx={{ width: "100%", flexShrink: 0 }}>
               {" "}
               {rishonim.map((gadol) => {
                 return (
@@ -131,7 +131,7 @@ const handleAlignment = (event, newAlignment) => {
                         onClick={() => getGadol(gadol)}
                         sx= {{fontSize : 15}}
                       >
-                        {gadol.Name}
+                       <Typography sx={{fontSize : 16, pl: 1, width: "100%", flexShrink: 0, textAlign : "left" }}>{gadol.Name}</Typography>
                       
                       </ListItemButton>
                     ) : (
@@ -146,8 +146,8 @@ const handleAlignment = (event, newAlignment) => {
                           },
                           fontSize : 15,
                         }}
-                      >
-                        {gadol.Name}
+                      >    <Typography sx={{ fontSize : 16 ,pl: 1, width: "100%", flexShrink: 0, textAlign : "left" }}>{gadol.Name}</Typography>
+                        
                       </ListItemButton>
                     )}
                   </ListItem>
@@ -172,7 +172,7 @@ const handleAlignment = (event, newAlignment) => {
                         className={classes.root}
                         onClick={() => getGadol(gadol)}
                       >
-                        {gadol.Name}
+                           <Typography sx={{fontSize : 16, pl: 1, width: "90%", flexShrink: 0, textAlign : "left" }}>{gadol.Name}</Typography>
                       </ListItemButton>
                     ) : (
                       <ListItemButton
@@ -186,7 +186,7 @@ const handleAlignment = (event, newAlignment) => {
                           },
                         }}
                       >
-                        {gadol.Name}
+                           <Typography sx={{fontSize : 16, pl: 1, width: "90%", flexShrink: 0, textAlign : "left" }}>{gadol.Name}</Typography>
                       </ListItemButton>
                     )}
                   </ListItem>
@@ -202,7 +202,7 @@ const handleAlignment = (event, newAlignment) => {
       </Link> */}
        </Typography>
        
-       <Typography align = "center" sx={{ fontSize: 12 , p : 0 }} variant="body1" color="inherit">
+       <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
                 © 2021 | 5782 David Weisberg
               </Typography>
     </div>

@@ -10,7 +10,7 @@ import { Card } from "react-bootstrap";
 import "./GadolBox.css";
 
 
-const hebrewHeaders = ["תולדותיו","חזור","הבא", "רבותיו","תלמידיו","ספריו"]
+const hebrewHeaders = ["תולדותיו","חזור","הבא", "רבותיו","תלמידיו","כתביו"]
 
   const englishHeaders = ["Timeline", "Back", "Next", "Teachers", "Students", "Works"]
 
@@ -44,22 +44,22 @@ console.log(gadolInfoCounter)
   return (
     <Card className="gadolbox" >
       <CardContent>
-        <Typography sx={{ fontSize: 30 }} color="text.primary" gutterBottom>
+        <Typography sx={{ fontSize: 27 }} color="text.primary" gutterBottom>
           {currentGadol.Name}
         </Typography>
 
         <Typography sx={{ fontSize: 15 }} color="text.secondary">
           {currentGadol.Fullname}
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+        <Typography sx={{ fontSize: 13, m:0 }} color="text.secondary">
           {currentGadol.Overview}
         </Typography>
-        <Card >
+        <Card className = "customCard" >
           <CardContent>
-            <Typography sx={{ mb: 1 }} color="text.primary" align="center">
+            <Typography sx={{ mb: 0.5 }} color="text.primary" align="center">
               {headers[0]}
             </Typography>
-            <Typography sx={{ mb: 1.5 , fontSize : 13}} color="text.secondary">
+            <Typography sx={{ m: 0 , fontSize : 15}} color="text.secondary">
               {currentGadol.Locations[gadolInfoCounter][1]}
             </Typography>
             <CardActions>
@@ -96,25 +96,26 @@ console.log(gadolInfoCounter)
 
         <Accordion
           expanded={expanded === "panel1"}
-          sx={{ mt: 3 }}
+          sx={{ m:0, p:0 }}
           onChange={handleChange("panel1")}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1bh-content"
             id="panel1bh-header"
+            
           >
-            <Typography sx={{ width: "83%", flexShrink: 0 }}>
+            <Typography sx={{ width: "100%", flexShrink: 0 }}>
               {headers[3]}
             </Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails sx={{  m:0 }}>
             {currentGadol.Teachers != ""
               ? currentGadol.Teachers.map((teacher) => {
                   return (
                     <ListItem disablePadding sx={{ pt: 0, pb: 0 }}>
                       {" "}
-                      <ListItemText primaryTypographyProps={{ fontSize: "15px" }}  sx={{ m: 0 }}>{teacher} </ListItemText>{" "}
+                      <ListItemText primaryTypographyProps={{ fontSize: "14px" }}  sx={{ m: 0 , ml:2}}>{teacher} </ListItemText>{" "}
                     </ListItem>
                   );
                 })
@@ -130,7 +131,7 @@ console.log(gadolInfoCounter)
             aria-controls="panel2bh-content"
             id="panel2bh-header"
           >
-            <Typography sx={{ width: "33%", flexShrink: 0 }}>
+            <Typography sx={{ width: "100%", flexShrink: 0 }}>
               {headers[4]}
             </Typography>
           </AccordionSummary>
@@ -140,7 +141,7 @@ console.log(gadolInfoCounter)
                   return (
                     <ListItem disablePadding sx={{ pt: 0, pb: 0 }}>
                       {" "}
-                      <ListItemText primaryTypographyProps={{ fontSize: "15px" }}  sx={{ m: 0 }}>{student} </ListItemText>{" "}
+                      <ListItemText primaryTypographyProps={{ fontSize: "14px" }}  sx={{ m: 0, ml:2 }}>{student} </ListItemText>{" "}
                     </ListItem>
                   );
                 })
@@ -156,7 +157,7 @@ console.log(gadolInfoCounter)
             aria-controls="panel3bh-content"
             id="panel3bh-header"
           >
-            <Typography sx={{ width: "33%", flexShrink: 0 }}>{headers[5]}</Typography>
+            <Typography sx={{ width: "100%", flexShrink: 0 }}>{headers[5]}</Typography>
           </AccordionSummary>
           <AccordionDetails>
             {currentGadol.Works != ""
@@ -165,7 +166,7 @@ console.log(gadolInfoCounter)
                     <ListItem disablePadding>
                       {" "}
                       <ListItemText
-                        primaryTypographyProps={{ fontSize: "15px" }}
+                        primaryTypographyProps={{ fontSize: "14px", ml:2 }}
                         sx={{ m: 0 }}
                       >
                         {work}{" "}
