@@ -3,19 +3,19 @@
     "Name": "Maharal",
     "Fullname": "R' Yehuda ben Betzalel Loew",
     "City": "Prague",
-    "Locations": [[[50.075539, 14.4378], "Born in 1512"], [[50.075539, 14.4378], "Died in 1609"]],
+    "Locations": [[[52.400190, 16.927550], "Born in Posen in 1512"], [[50.075539, 14.4378], "Died in 1609 in Prague"]],
     "Overview": "",
     "Year Born": 1512,
     "Year Died": 1609,
     "Teachers": [],
-    "Students": [],
-    "Works": []
+    "Students": ["R' Yom Tov Lipman Heller"],
+    "Works": ["Gur Aryeh", "Gevuros Hashem", "Tiferes Yisroel", "Netzach Yisroel"]
   },
   {
     "Name": "Vilna Gaon",
     "Fullname": "R' Eliyahu ben Shlomo",
     "City": "Vilna",
-    "Locations": [[[54.687157, 25.279652], "Born in 1720"],[[54.687157, 25.279652], "Died in 1796"]],
+    "Locations": [[[52.583333, 24.85], "Born in 1720 in Sialiec, Modern day Belarus"],[[54.687157, 25.279652], "Died in 1796 in Vilna"]],
     "Overview": "",
     "Year Born": 1720,
     "Year Died": 1796,

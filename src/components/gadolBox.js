@@ -10,7 +10,7 @@ import { Card } from "react-bootstrap";
 import "./GadolBox.css";
 
 
-const hebrewHeaders = ["תולדותיו","חזור","הבא", "רבותיו","תלמידיו","כתביו"]
+const hebrewHeaders = ["תולדותיו","חזור","הבא", "רבותיו","תלמידיו","חיבוריו"]
 
   const englishHeaders = ["Timeline", "Back", "Next", "Teachers", "Students", "Works"]
 

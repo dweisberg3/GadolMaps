@@ -1,7 +1,7 @@
 [
   {
     "Name": "Rabbeinu Gershom",
-    "Fullname": "",
+    "Fullname": "R' Gershom ben Yehudah",
     "City": "Metz",
     "Locations": [
       [[49.114460, 6.172090], "Born in Metz, France in 960"],
@@ -19,6 +19,19 @@
       "R' Yitzchak ben Yehudah",
       "R' Eliezer HaGadol"
     ],
+    "Works": ["Responsa", "Liturgical Poems"]
+  },
+  {
+    "Name": "Rif",
+    "Fullname": "R' Yitchak al-Fasi",
+    "City": "Fez",
+    "Locations": [[[36.521220, 8.034610], "Born in Beni Hammad, Algeria in 1013"], [[35.671165,10.100547], "Studied in Kairouan, Tunisia under Rabbeinu Nissim and Rabbeinu Chananel"],
+                  [[34.059769,-4.965310],"Moved to Fez in 1045, died in 1103"]],
+    "Overview": "",
+    "Year Born": 1013,
+    "Year Died": 1103,
+    "Teachers": ["Nissim ben Yacov", "Chananel ben Chushiel"],
+    "Students": ["Yoseph ibn Migash", "Yehudah Halevi"],
     "Works": ["Sefer Hahalacha"]
   },
   {
@@ -37,26 +50,26 @@
   {
     "Name": "Ibn Ezra",
     "Fullname": "R' Abraham ben Meir Ibn Ezra",
-    "City": "Cordova",
-    "Locations": [[[37.88472, -4.77913], "Born in Cordova, Spain in 1089"]],
+    "City": "Tudela",
+    "Locations": [[[37.88472, -4.77913], "Born in Tudela, Spain  in 1089"],[[43.341629,3.217820], "Traveled to Béziers, France"]],
     "Overview": "",
     "Year Born": 1089,
     "Year Died": 1164,
-    "Teachers": ["Rashi", "R' Shlomo of Montpellier"],
-    "Students": ["Rashba"],
-    "Works": []
+    "Teachers": [""],
+    "Students": [""],
+    "Works": ["Commentary on Tanach"]
   },
   {
     "Name": "Rabbeinu Tam",
     "Fullname": "R' Yaakov ben Meir",
     "City": "Ramerupt",
-    "Locations": [[[48.51856, 4.2938], "Born in Ramerupt, France in 1100"]],
+    "Locations": [[[48.51856, 4.2938], "Born in Ramerupt, France in 1100"],[[48.29752, 4.07471], "Died in Troyes in 1171"]],
     "Overview": "",
     "Year Born": 1100,
     "Year Died": 1171,
-    "Teachers": ["Rambam", "Rif", "Rashi", "R' Shlomo of Montpellier"],
-    "Students": ["Rashba"],
-    "Works": []
+    "Teachers": ["Rashbam"],
+    "Students": ["Ri Hazaken"],
+    "Works": ["Sefer Hayashar"]
   },
   {
     "Name": "Rambam",
@@ -81,11 +94,11 @@
   },
   {
     "Name": "Rabbeinu Yonah",
-    "Fullname": "",
+    "Fullname": "R' Yonah ben Avraham Girondi",
     "City": "Gerona, Spain",
-    "Locations": [[[38.919971, -6.9428], "Born in Gerona, Spain in 1180"]],
+    "Locations": [[[38.919971, -6.9428], "Born in Gerona, Spain in 1180"],[[39.862831,-4.027323],"Died in Toleda, Spain in 1263"]],
     "Overview": "",
-    "Year Born": 1180,
+    "Year Born": 1210,
     "Year Died": 1263,
     "Teachers": ["R' Shlomo of Montpellier"],
     "Students": ["Rashba"],
@@ -93,7 +106,7 @@
   },
   {
     "Name": "Ramban",
-    "Fullname": "",
+    "Fullname": "R' Moshe ben Nachman",
     "City": "Gerona, Spain",
     "Locations": [
       [[38.919971, -6.9428], "Born in Gerona, Spain in 1194"],
@@ -104,45 +117,35 @@
     "Overview": "",
     "Year Born": 1194,
     "Year Died": 1270,
-    "Teachers": ["R' Shlomo of Montpellier", "R' Yehuda ben Yakar"],
+    "Teachers": ["R' Yehuda ben Yakar"],
     "Students": ["Rashba"],
     "Works": ["Chidushim al HaShas", "Commentary on the Torah"]
   },
-  {
-    "Name": "Rif",
-    "Fullname": "",
-    "City": "Fez",
-    "Locations": [[[34.059769, -4.96531], ""]],
-    "Overview": "",
-    "Year Born": 1013,
-    "Year Died": 1103,
-    "Teachers": ["Nissim ben Yacov", "Chananel ben Chushiel"],
-    "Students": ["Yoseph ibn Migash", "Yehudah Halevi"],
-    "Works": ["Sefer Hahalacha"]
-  },
-  {
-    "Name": "Ritva",
-    "Fullname": "",
-    "City": "Seville, Spain",
-    "Locations": [[[37.389091, -5.984459], ""]],
-    "Overview": "",
-    "Year Born": 1013,
-    "Year Died": 1103,
-    "Teachers": ["Rashba"],
-    "Students": [],
-    "Works": ["Sefer Hahalacha"]
-  },
+
+  
   {
     "Name": "Rashba",
-    "Fullname": "",
+    "Fullname": "R' Shlomo ben Aderet",
     "City": "Barcelona",
-    "Locations": [[[41.385063, 2.173404], "Rassba lived here"]],
+    "Locations": [[[41.385063, 2.173404], "Born in Barcelona in 1235"], [[41.385063, 2.173404], "Died in 1310"]],
     "Overview": "",
     "Year Born": 1235,
     "Year Died": 1310,
     "Teachers": ["Ramban", "Rabbeinu Yonah"],
     "Students": ["Rif", "Ritva", "Rabbeinu Bachya"],
     "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+  },
+  {
+    "Name": "Ritva",
+    "Fullname": "",
+    "City": "Seville, Spain",
+    "Locations": [[[37.389091, -5.984459], "Born in Seville, Spain circa 1250"], [[40.942902,-4.108807], "Lived Most of his life in Segovia, Spain"]],
+    "Overview": "",
+    "Year Born": "1250",
+    "Year Died": "1330",
+    "Teachers": ["Rashba", "R' Aaron HaLevi"],
+    "Students": [],
+    "Works": ["Sefer Hahalacha"]
   }
  
   

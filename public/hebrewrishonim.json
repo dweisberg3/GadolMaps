@@ -1,14 +1,14 @@
 [
     {
       "Name": "רבנו גרשום",
-      "Fullname": "",
+      "Fullname": "רבינו גרשום מאור הגולה",
       "City": "Metz",
       "Locations": [
         [[34.059769, -4.96531], "נולד במץ בצרפת 960"],
         [[49.995098,8.267390], "נפטר מיינץ 1040"]
       ],
       "Overview": 
-        "Made enacments that were adopted by virtual all Jewish communites: Ban against polygamy, Ban against divorce without wife's consent"
+        ""
       ,
       "Year Born": 960,
       "Year Died": 1040,
@@ -20,6 +20,19 @@
         
       ],
       "Works": [""]
+    },
+    {
+      "Name": "רי\"ף",
+      "Fullname": "רבי יצחק בן יעקב אלפסי",
+      "City": "Fez",
+      "Locations": [[[36.521220, 8.034610], "נולד ב קלעת חמאד באלג'יר בשנת 1013"], [[35.671165,10.100547], "למד אצל רבינו נסים ורבינו חננאל בקירואן שבתוניסיה"],
+           [[34.059769,-4.965310],"נסע לפאס בשנת 1045"], [[34.059769,-4.965310],"נפטר בשנת 1103"]],
+      "Overview": "",
+      "Year Born": 1013,
+      "Year Died": 1103,
+      "Teachers": ["רבינו נסים", "רבינו חננאל"],
+      "Students": ["ר\"י מיגש", "רבי יהודה הלוי"],
+      "Works": ["ספר ההלכה"]
     },
     {
       "Name": "רש\"י",
@@ -36,27 +49,27 @@
     },
     {
       "Name": "אבן עזרא",
-      "Fullname": "R' Abraham ben Meir Ibn Ezra",
+      "Fullname": "רבי אברהם בן מאיר אִבּן עזרא",
       "City": "Cordova",
-      "Locations": [[[37.88472, -4.77913], "נולד בקורדובה 1089"]],
+      "Locations": [[[37.88472, -4.77913], "נולד בטודלה בספרד 1089"],[[43.341629,3.217820], "נסע לבזייה בצרפת"]],
       "Overview": "",
       "Year Born": 1089,
       "Year Died": 1164,
-      "Teachers": ["Rashi", "R' Shlomo of Montpellier"],
-      "Students": ["Rashba"],
-      "Works": []
+      "Teachers": [""],
+      "Students": [""],
+      "Works": ["פירוש על התורה"]
     },
     {
       "Name": "רבינו תם",
       "Fullname": "רבי יעקב בן מאיר",
       "City": "Ramerupt",
-      "Locations": [[[48.51856, 4.2938], "נולד בעיר רמרו בצרפת"]],
+      "Locations": [[[48.51856, 4.2938], "1100  נולד בעיר רמרו בצרפת"], [[48.29752, 4.07471],"נפטר בטרואה בשנת 1171"]],
       "Overview": "",
       "Year Born": 1100,
       "Year Died": 1171,
-      "Teachers": ["Rambam", "Rif", "Rashi", "R' Shlomo of Montpellier"],
-      "Students": ["Rashba"],
-      "Works": []
+      "Teachers": ["רשב\"ם"],
+      "Students": ["ר\"י הזקן"],
+      "Works": ["ספר הישר"]
     },
     {
       "Name": "רמב\"ם",
@@ -81,19 +94,19 @@
     },
     {
       "Name": "רבינו יונה",
-      "Fullname": "",
+      "Fullname": "רבי יונה גירונדי",
       "City": "Gerona, Spain",
-      "Locations": [[[38.919971, -6.9428], "נולד בגירונה בספרד שנת 1180"]],
+      "Locations": [[[38.919971, -6.9428], "נולד בגירונה בספרד שנת 1210"],[[39.862831,-4.027323],"נפטר בטולדו ספרד 1263"]],
       "Overview": "",
-      "Year Born": 1180,
+      "Year Born": 1210,
       "Year Died": 1263,
-      "Teachers": ["R' Shlomo of Montpellier"],
+      "Teachers": ["רבי שלמה מן ההר"],
       "Students": ["רשב\"א"],
-      "Works": ["שערי תשובה"]
+      "Works": ["שערי תשובה","עליות דרבנו יונה","פירוש על הרי\"ף על מסכת ברכות"]
     },
     {
       "Name": "רמב\"ן",
-      "Fullname": "",
+      "Fullname": "רבי משה בן נחמן",
       "City": "Gerona, Spain",
       "Locations": [
         [[38.919971, -6.9428, "נולד בגירונה בספרד שנת 1194"]],
@@ -105,45 +118,33 @@
       "Overview": "",
       "Year Born": 1194,
       "Year Died": 1270,
-      "Teachers": ["R' Shlomo of Montpellier", "R' Yehuda ben Yakar"],
+      "Teachers": ["רבי יהודה בר יקר"],
       "Students": ["רשב\"א"],
       "Works": ["חידושים על הש\"ס", "פירוש על תורה"]
-    },
-    {
-      "Name": "רי\"ף",
-      "Fullname": "",
-      "City": "Fez",
-      "Locations": [[[34.059769, -4.96531], ""]],
-      "Overview": "",
-      "Year Born": 1013,
-      "Year Died": 1103,
-      "Teachers": ["Nissim ben Yacov", "Chananel ben Chushiel"],
-      "Students": ["Yoseph ibn Migash", "Yehudah Halevi"],
-      "Works": ["ספר ההלכה"]
-    },
-    {
-      "Name": "ריטב\"א",
-      "Fullname": "",
-      "City": "Seville, Spain",
-      "Locations": [[[37.389091, -5.984459], ""]],
-      "Overview": "",
-      "Year Born": 1013,
-      "Year Died": 1103,
-      "Teachers": ["Rashba"],
-      "Students": [],
-      "Works": ["Sefer Hahalacha"]
     },
     {
       "Name": "רשב\"א",
       "Fullname": "",
       "City": "Barcelona",
-      "Locations": [[[41.385063, 2.173404], "נולד בברצלונה שנת 1235"]],
+      "Locations": [[[41.385063, 2.173404], "נולד בברצלונה שנת 1235"],[[41.385063, 2.173404],"נפטר שנת 1310"]],
       "Overview": "",
       "Year Born": 1235,
       "Year Died": 1310,
-      "Teachers": ["Ramban", "Rabbeinu Yonah"],
-      "Students": ["ריטב\"א", "Rabbeinu Bachya"],
-      "Works": ["Chidushim al HaShas", "Responsa", "Toras HaBayis"]
+      "Teachers": ["רמב\"ן", "רבינו יונה"],
+      "Students": ["ריטב\"א", "רבינו בחיי"],
+      "Works": ["חידושים על הש\"ס", "שאלות ותשובות", "תורת הבית"]
+    },
+    {
+      "Name": "ריטב\"א",
+      "Fullname": "רבי יום טוב בן אברהם אַשֵּׂבִילִי",
+      "City": "סביליה, ספרד",
+      "Locations": [[[37.389091, -5.984459], "נולד בסביליה, ספרד קרוב לשנת 1250"], [[40.942902,-4.108807], "רוב חייו גר בסרגוסה, ברצלונה "]],
+      "Overview": "",
+      "Year Born": "1250",
+      "Year Died": "1330",
+      "Teachers": ["רשב\"א", "רא\"ה"],
+      "Students": [],
+      "Works": ["חידושים על הש\"ס", "שאלות ותשובות"]
     }
   
   ]

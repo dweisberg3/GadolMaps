@@ -201,6 +201,18 @@ const handleAlignment = (event, newAlignment) => {
         {'feedback@gadolmaps.com'}
       </Link> */}
        </Typography>
+       <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
+                GadolMaps version 1.0 
+              </Typography>
+              <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
+               I hope to grow this compilation of data. 
+              </Typography>
+              <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
+              Check back later
+              </Typography>
+              <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
+               Enjoy!
+              </Typography>
        
        <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
                 © 2021 | 5782 David Weisberg
