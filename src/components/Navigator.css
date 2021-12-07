@@ -1,9 +1,9 @@
 .navigator{
-    height: 85vh;
+    height: 100vh;
     background:rgb(247, 250, 247);
     float:left;
     left: 0;
-    width: 15%;    
+    width: 20%;    
     /* border-radius: 12px;
   padding: 5px; */
   position: absolute;

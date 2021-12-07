@@ -3,10 +3,10 @@ import {useEffect, useState} from "react";
 import "./Navigator.css";
 
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
+import { positions } from '@mui/system';
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-
+import Button from "@mui/material/Button"
 import List from "@mui/material/List";
 import { makeStyles } from "@mui/styles";
 import ListItem from "@mui/material/ListItem";
@@ -17,6 +17,7 @@ import TabPanel from "@mui/lab/TabPanel";
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Typography from "@mui/material/Typography";
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Link from "@mui/material/Link";
 
 const useStyles = makeStyles({
@@ -39,6 +40,16 @@ export default function Navigator({ getGadol, rishonim, achronim, currentGadol ,
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen((prev) => !prev);
+  };
+
+  const handleClickAway = () => {
+    setOpen(false);
+  };
   console.log(rishonim);
   console.log(achronim);
 
@@ -47,6 +58,17 @@ export default function Navigator({ getGadol, rishonim, achronim, currentGadol ,
     color: "black",
     textAlign: "center",
     paddingTop: "50px",
+  };
+
+  const styles = {
+    position: 'absolute',
+    top: 50,
+    right: 0,
+    left: 50,
+    zIndex: 1,
+    border: '1px solid',
+    p: 1,
+    bgcolor: 'background.paper',
   };
 
   const [alignment, setAlignment] = useState('left');
@@ -93,16 +115,33 @@ const handleAlignment = (event, newAlignment) => {
   </ToggleButtonGroup>
      
 
-  
  
-  <Typography align = "center" sx={{ fontSize: 30 , pt : 2}} color="text.primary" gutterBottom>
+ 
+  <Typography align = "center" sx={{ fontSize: 25 , p : 0, m:0}} color="text.primary" gutterBottom>
          GadolMaps
         </Typography>
+        <ClickAwayListener
+      mouseEvent="onMouseDown"
+      touchEvent="onTouchStart"
+      onClickAway={handleClickAway}
+    >
+      <Box sx={{ position: 'right' }}>
+        <Button sx= {{p:1, fontSize: 12, color : "darkgreen"}}type="button" onClick={handleClick}>
+          About
+        </Button> 
+        {open ? (
+          <Box sx={styles}>
+            <Typography sx = {{fontSize : 11}}>  
+            
+            "Gadol" in Hebrew means great and is often used to refer to a great scholar. Rishonim, literally "the early ones", refer to Jewish scholars who lived 
+          between the 10th and 14th centuries. Achronim, literally "latter ones", refer to those who lived from the 15th century and on. These figures produced commentaries on the Torah and novelle on the Talmud which have had a monumental impact on Jewish law, thought, and the Jewish people themselves.
 
-        
-        {" "}
-      
-        
+            </Typography>
+         
+          </Box>
+        ) : null}
+      </Box>
+    </ClickAwayListener>
       </Box>
 
       <Box sx={{ width: "100%", typography: "body1", borderBottom : 1 }}>
@@ -210,9 +249,7 @@ const handleAlignment = (event, newAlignment) => {
               <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
               Check back later
               </Typography>
-              <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
-               Enjoy!
-              </Typography>
+              
        
        <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
                 © 2021 | 5782 David Weisberg
