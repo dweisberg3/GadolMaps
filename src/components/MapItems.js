@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import L  from "leaflet";
 import { Marker,  useMap, Tooltip} from "react-leaflet";
 import "leaflet-polylinedecorator";
-import "./Legend.css";
+
 import ArrowheadsPolyline from "./ArrowheadsPolyline.js";
 
 export default function MapItems({
@@ -42,12 +42,12 @@ export default function MapItems({
     polyLineCordinates.push(currentGadol.Locations[i][0]);
     // console.log(currentGadol.Locations[i][0]);
   }
-  // console.log(polyLineCordinates);
+  console.log(polyLineCordinates);
   // console.log(gadolInfoCounter);
 
   useEffect(() => {
     
-    map.setMaxZoom(7);
+    map.setMaxZoom(6);
     map.setMinZoom(4);
     map.setMaxBounds([
       [8.12884, -49.72852],
@@ -63,8 +63,13 @@ export default function MapItems({
   }, [map]); //here add map
 
  
+  useEffect(() => {
+    map.panInsideBounds(polyLineCordinates,{ duration: 1.75, easeLinearity: 0.05, maxZoom : 3 })
+    // map.flyTo(position, 5, { duration: 1.75, easeLinearity: 0.05 });
+    // map.center
+  }, [position])
 
-  map.flyTo(position, 5, { duration: 1.75, easeLinearity: 0.05 });
+
 
   // console.log(isNewGadol);
   // console.log(teachers);

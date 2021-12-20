@@ -3,9 +3,9 @@ import React, { useState, useEffect} from "react";
 import {  MapContainer,  TileLayer, ZoomControl } from "react-leaflet";
 import "./App.css";
 import Navigator from "./components/Navigator.js";
-import GadolBox from "./components/GadolBox";
+import GadolBox from "./components/GadolBox.js";
 
-import MapItems from "./components/MapItems";
+import MapItems from "./components/MapItems.js";
 
 const App = () => {
   const [rishonim, setRishonim] = useState([]);
