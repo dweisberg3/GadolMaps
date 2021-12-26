@@ -50,8 +50,7 @@ export default function Navigator({ getGadol, rishonim, achronim, currentGadol ,
   const handleClickAway = () => {
     setOpen(false);
   };
-  console.log(rishonim);
-  console.log(achronim);
+  
 
   const styleObj = {
     fontSize: 35,

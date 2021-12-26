@@ -36,9 +36,10 @@ const App = () => {
 
   const getLanguage = (pick) => {
 
-    const rishonIndex = englishRishonim.findIndex(({ Name }) => Name === currentGadol.Name);
-    const achronIndex = englishAchronim.findIndex(({ Name }) => Name === currentGadol.Name);
-     
+    const rishonIndex = rishonim.findIndex(({ Name }) => Name === currentGadol.Name);
+    const achronIndex = achronim.findIndex(({ Name }) => Name === currentGadol.Name);
+    console.log(rishonIndex)
+    console.log(achronIndex)
     if (pick === "hebrew") {
       
       console.log("got to hebrew")
@@ -46,12 +47,26 @@ const App = () => {
       setRishonim(hebrewRishonim)
       setAchronim(hebrewAchronim)
       setLanguage("hebrew")
+      // if(rishonIndex != -1){
+      //   setCurrentGadol(rishonim[rishonIndex])
+      // }
+      // else if(achronIndex != -1){
+      //   setCurrentGadol(achronim[achronIndex])
+      // }
     }
+
+
     else if (pick === "english") {
       console.log("got to english")
       setRishonim(englishRishonim)
       setAchronim(englishAchronim)
       setLanguage("english")
+      // if(rishonIndex != -1){
+      //   setCurrentGadol(rishonim[rishonIndex])
+      // }
+      // else if(achronIndex != -1){
+      //   setCurrentGadol(achronim[achronIndex])
+      // }
     } 
   }
 
@@ -185,7 +200,7 @@ const App = () => {
           decreaseGadolInfoCounter={decreaseGadolInfoCounter}
           language = {language}
         />
-        <MapContainer center={currentPosition} zoom={5} zoomControl = {false}>
+        <MapContainer center={currentPosition} maxZoom = {7} minZoom = {4} zoom={4} zoomControl = {false} maxBounds = {[8.12884, -49.72852],[66.28807, 76.55273]}>
           <TileLayer
             url="https://api.mapbox.com/styles/v1/dweisb/ckuyvslt608od14o4h0cqpblf/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZHdlaXNiIiwiYSI6ImNrdGQzZzQ2aTBicGEyb3BoZjI1YjNwaGkifQ.9LTCnUZDmffDzf7BzqVq5w"
             attribution='Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'

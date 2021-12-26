@@ -37,9 +37,13 @@ export default function GadolBox({
    
   }, [language])
 
+  useEffect(() => {
+    setExpanded(false)
+  },[currentGadol])
+
   
-console.log(currentGadol.Locations[gadolInfoCounter][1])
-console.log(gadolInfoCounter)
+// console.log(currentGadol.Locations[gadolInfoCounter][1])
+// console.log(gadolInfoCounter)
 
   return (
     <Card className="gadolbox" >
