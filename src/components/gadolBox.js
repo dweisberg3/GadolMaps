@@ -31,7 +31,7 @@ export default function GadolBox({
     if(language === "english"){
       setHeaders(englishHeaders)
     }
-    else if(language === "hebrew"){
+    else if(language === "hebrew"){ 
       setHeaders(hebrewHeaders)
     }
    

@@ -45,31 +45,30 @@ export default function MapItems({
   console.log(polyLineCordinates);
   // console.log(gadolInfoCounter);
 
-  // useEffect(() => {
+  useEffect(() => {
     
-  //   map.setMaxZoom(6);
-  //   map.setMinZoom(4);
-  //   // map.setMaxBounds([
-  //   //   [8.12884, -49.72852],
-  //   //   [66.28807, 76.55273],
-  //   // ]);
+    map.setMaxZoom(6);
+    map.setMinZoom(4);
+    map.setMaxBounds([
+      [8.12884, -49.72852],
+      [66.28807, 76.55273],
+    ]);
 
-  //   // L.control
-  //   //   .zoom({
-  //   //     position: "bottomright",
-  //   //   })
+    // L.control
+    //   .zoom({
+    //     position: "bottomright",
+    //   })
     
-  //     // .addTo(map);
-  // }, [map]); //here add map
+      // .addTo(map);
+  }, [map]); //here add map
 
  
-  // useEffect(() => {
-  //   map.panInsideBounds(polyLineCordinates,{ duration: 1.75, easeLinearity: 0.05, maxZoom : 3 })
-  //   // 
-  //   // map.center
-  // }, [position])
+  useEffect(() => {
+    map.panInsideBounds(polyLineCordinates,{ duration: 1.75, easeLinearity: 0.05, maxZoom : 3 })
+   
+  }, [position])
 
-  map.flyTo(position, 5, { duration: 1.75, easeLinearity: 0.05 });
+  // map.flyTo(position, 5, { duration: 1.75, easeLinearity: 0.05 });
 
   // console.log(isNewGadol);
   // console.log(teachers);
