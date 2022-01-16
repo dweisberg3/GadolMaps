@@ -248,6 +248,9 @@ const handleAlignment = (event, newAlignment) => {
               <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
               Check back later
               </Typography>
+              <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
+              Thoughts or Questions? Send me an email feedback@gadolmaps.com
+              </Typography>
               
        
        <Typography align = "center" sx={{ fontSize: 13 , p : 0 }} variant="body1" color="inherit">
