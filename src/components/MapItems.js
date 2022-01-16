@@ -7,7 +7,7 @@ import ArrowheadsPolyline from "./ArrowheadsPolyline.js";
 
 export default function MapItems({
   currentGadol,
-  gadolInfoCounter,
+  gadolInfoCounter, position,
   
 }) {
   // const redIcon = new Icon({
@@ -33,16 +33,16 @@ export default function MapItems({
   // });
 
  
-  const position = currentGadol.Locations[gadolInfoCounter][0];
+  // const position = currentGadol.Locations[gadolInfoCounter][0];
   console.log(position)
   const map = useMap();
-  let polyLineCordinates = [];
+  // let polyLineCordinates = [];
   // console.log(gadolInfoCounter);
-  for (let i = 0; i <= gadolInfoCounter; i++) {
-    polyLineCordinates.push(currentGadol.Locations[i][0]);
-    // console.log(currentGadol.Locations[i][0]);
-  }
-  console.log(polyLineCordinates);
+  // for (let i = 0; i <= gadolInfoCounter; i++) {
+  //   polyLineCordinates.push(currentGadol.Locations[i][0]);
+  //   // console.log(currentGadol.Locations[i][0]);
+  // }
+  // console.log(polyLineCordinates);
   // console.log(gadolInfoCounter);
 
   useEffect(() => {
@@ -63,12 +63,12 @@ export default function MapItems({
   }, [map]); //here add map
 
  
-  useEffect(() => {
-    map.panInsideBounds(polyLineCordinates,{ duration: 1.75, easeLinearity: 0.05, maxZoom : 3 })
+  // useEffect(() => {
+  //   map.panInsideBounds(polyLineCordinates,{ duration: 1.75, easeLinearity: 0.05, maxZoom : 3 })
    
-  }, [position])
+  // }, [position])
 
-  // map.flyTo(position, 5, { duration: 1.75, easeLinearity: 0.05 });
+  map.flyTo(position, 5, { duration: 1.75, easeLinearity: 0.05 });
 
   // console.log(isNewGadol);
   // console.log(teachers);
@@ -81,10 +81,10 @@ export default function MapItems({
       <Tooltip>{currentGadol.Name}</Tooltip>
       </Marker>
 
-      <ArrowheadsPolyline
+      {/* <ArrowheadsPolyline
         positions={polyLineCordinates}
         arrowheads={{ size: '15px' }}
-      />
+      /> */}
     </div>
   );
 }

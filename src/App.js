@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from "react";
+import axios from 'axios'
 
 import {  MapContainer,  TileLayer, ZoomControl } from "react-leaflet";
 import "./App.css";
@@ -24,22 +25,47 @@ const App = () => {
   const [hebrewAchronimIsLoaded, setHebrewAchronimIsLoaded] = useState(false);
   const [hebrewRishonimIsLoaded, setHebrewRishonimIsLoaded] = useState(false);
   const [language, setLanguage] = useState("english");
+  const [names,setNames] = useState(null);
+  const [axiosLoaded, setAxiosLoaded] = useState(false);
+  const [gadolTeachers, setGadolTeachers] = useState([])
+  const [gadolStudents, setGadolStudents] = useState([])
+  const [gadolEvents, setGadolEvents] = useState([])
+  const [gadol, setGadol] = useState()
 
-  const getGadol = (gadol) => {
-    console.log(gadol.Name);
-    setCurrentGadol(gadol);
-    setCurrentPosition(gadol.Locations[0][0]);
-    setisNewGadol(true);
-    setGadolInfoCounter(0);
+
+  const getGadol = async (gadol) => {
+    const gadolName = gadol.name;
+    console.log(gadol.name)
+    console.log("got to get gadol")
+    
+    const theGadol = await axios.get("http://localhost:8080/gadol" , {params : {name : gadol.name}} )
+    setCurrentPosition([theGadol.data.latitude, theGadol.data.longitude]);
+    setGadol(theGadol.data)
+
+    const teachers = await axios.get("http://localhost:8080/teachers", {params : {name : gadol.name}})
+      console.log(teachers.data);
+      setGadolTeachers(teachers.data);
+      
+  
+    const students = await axios.get("http://localhost:8080/students", {params : {name : gadol.name}})
+      console.log(students.data);
+      setGadolStudents(students.data);
+     
+    const events = await  axios.get("http://localhost:8080/events", {params : {name : gadol.name}})
+      console.log(events.data);
+      setGadolEvents(events.data);
+      
+    // console.log(gadol.Name);
+    // setCurrentGadol(gadol);
+    // setCurrentPosition(gadol.Locations[0][0]);
+    // setisNewGadol(true);
+    // setGadolInfoCounter(0);
    
   };
 
   const getLanguage = (pick) => {
 
-    const rishonIndex = rishonim.findIndex(({ Name }) => Name === currentGadol.Name);
-    const achronIndex = achronim.findIndex(({ Name }) => Name === currentGadol.Name);
-    console.log(rishonIndex)
-    console.log(achronIndex)
+   
     if (pick === "hebrew") {
       
       console.log("got to hebrew")
@@ -70,43 +96,7 @@ const App = () => {
     } 
   }
 
-  // const filterTeachers = (currentGadol) => {
-  //   // console.log(currentGadol)
-  //   console.log(rishonim)
-  //   console.log(currentGadol.Students)
-  //   let teachers = "";
-  //   if (rishonim.includes(currentGadol)) {
-  //     console.log("got hesfsedf")
-  //     teachers = rishonim.filter(gadol =>
-  //       gadol.Students.includes(currentGadol.Name)
-  //     );
-  //   } else if (achronim.includes(currentGadol)) {
-  //     teachers = achronim.filter(gadol =>
-  //       gadol.Students.includes(currentGadol.Name)
-  //     );
-  //   }
-  //   console.log(teachers)
-  //   return teachers
-  // };
-
-  // const filterStudents = (currentGadol) => {
-  //   let students = "";
-  //   // console.log(currentGadol)
-  //   // console.log(rishonim)
-  //   if (rishonim.includes(currentGadol)) {
-  //     console.log("got hesfsedf")
-  //     students = rishonim.filter(gadol =>
-  //       gadol.Teachers.includes(currentGadol.Name)
-  //     );
-  //   } else if (achronim.includes(currentGadol)) {
-  //     students = achronim.filter(gadol =>
-  //       gadol.Teachers.includes(currentGadol.Name)
-  //     );
-  //   }
-
-  //   console.log(students)
-  //   return students;
-  // };
+  
 
   const increaseGadolInfoCounter = () => {
     setGadolInfoCounter(gadolInfoCounter + 1);
@@ -116,58 +106,62 @@ const App = () => {
     setGadolInfoCounter(gadolInfoCounter - 1);
   };
 
-  useEffect(() => {
-    fetch("./englishrishonim.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        setEnglishRishonim(result)
-        setRishonim(result);
-        setCurrentGadol(result[3])
-        setRishonimIsLoaded(true);
+  // useEffect(() => {
+  //   fetch("./englishrishonim.json", {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       setEnglishRishonim(result)
+  //       setRishonim(result);
+  //       setCurrentGadol(result[2])
+  //       setRishonimIsLoaded(true);
     
-      });
-    fetch("./englishachronim.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        setEnglishAchronim(result)
-        setAchronim(result);
-        setAchronimIsLoaded(true);
+  //     });
+  //   fetch("./englishachronim.json", {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       setEnglishAchronim(result)
+  //       setAchronim(result);
+  //       setAchronimIsLoaded(true);
         
-      });
-      fetch("./hebrewrishonim.json", {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          setHebrewRishonim(result);
-          setHebrewRishonimIsLoaded(true);
+  //     });
+  //     fetch("./hebrewrishonim.json", {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Accept: "application/json",
+  //       },
+  //     })
+  //       .then((res) => res.json())
+  //       .then((result) => {
+  //         setHebrewRishonim(result);
+  //         setHebrewRishonimIsLoaded(true);
           
-        });
-        fetch("./hebrewachronim.json", {
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            setHebrewAchronim(result);
-            setHebrewAchronimIsLoaded(true);
+  //       });
+  //       fetch("./hebrewachronim.json", {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //           Accept: "application/json",
+  //         },
+  //       })
+  //         .then((res) => res.json())
+  //         .then((result) => {
+  //           setHebrewAchronim(result);
+  //           setHebrewAchronimIsLoaded(true);
             
-          });
+  //         });
+
+       
+
+
     // Note: it's important to handle errors here
     // instead of a catch() block so that we don't swallow
     // exceptions from actual bugs in components.
@@ -175,11 +169,22 @@ const App = () => {
     //   setRishonimIsLoaded(true);
     //   setError(error);
     // }
-  }, []);
+  // }, []);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080").then((response) => {
+      console.log(response.data);
+      console.log(typeof response.data);
+      setNames(response.data);
+      setGadol(response.data)
+      setAxiosLoaded(true)
+    });
+    
+  }, [])
 
   if (error) {
     return <div>Error: {error.message}</div>;
-  } else if (!rishonimIsLoaded || !achronimIsLoaded  || !hebrewRishonimIsLoaded || !hebrewAchronimIsLoaded) {
+  } else if (!axiosLoaded) {
     return <div>Loading...</div>;
   } else {
     return (
@@ -188,6 +193,7 @@ const App = () => {
           getGadol={getGadol}
           rishonim={rishonim}
           achronim={achronim}
+          names = {names}
           currentGadol={currentGadol}
           getLanguage = {getLanguage}
           language = {language}
@@ -195,6 +201,9 @@ const App = () => {
 
         <GadolBox
           currentGadol={currentGadol}
+          gadol = {gadol}
+          students = {gadolStudents}
+          teachers = {gadolTeachers}
           gadolInfoCounter={gadolInfoCounter}
           increaseGadolInfoCounter={increaseGadolInfoCounter}
           decreaseGadolInfoCounter={decreaseGadolInfoCounter}
@@ -209,6 +218,7 @@ const App = () => {
 
           <MapItems
             currentGadol={currentGadol}
+            gadol = {gadol}
             position={currentPosition}
             gadolInfoCounter={gadolInfoCounter}
             isNewGadol={isNewGadol}

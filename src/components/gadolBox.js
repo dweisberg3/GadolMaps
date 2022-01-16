@@ -8,6 +8,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {useEffect, useState} from "react";
 import { Card } from "react-bootstrap";
 import "./GadolBox.css";
+import axios from "axios";
+
 
 
 const hebrewHeaders = ["תולדותיו","חזור","הבא", "רבותיו","תלמידיו","חיבוריו"]
@@ -20,26 +22,48 @@ export default function GadolBox({
   increaseGadolInfoCounter,
   decreaseGadolInfoCounter,
   language,
+  gadol,
+  teachers,
+  students,
 }) {
   const [expanded, setExpanded] = useState(false);
   const [headers, setHeaders] = useState(englishHeaders)
+  // const [teachers, setTeachers] = useState(null);
+
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-
-  useEffect(() => {
-    if(language === "english"){
-      setHeaders(englishHeaders)
-    }
-    else if(language === "hebrew"){ 
-      setHeaders(hebrewHeaders)
-    }
+  console.log(gadol)
+console.log(gadol.name)
+console.log(students)
+console.log(teachers)
+  // useEffect(() => {
+  //   if(language === "english"){
+  //     setHeaders(englishHeaders)
+  //   }
+  //   else if(language === "hebrew"){ 
+  //     setHeaders(hebrewHeaders)
+  //   }
    
-  }, [language])
+  // }, [language])
 
-  useEffect(() => {
-    setExpanded(false)
-  },[currentGadol])
+  // useEffect(() => {
+  //   setExpanded(false)
+  // },[currentGadol])
+
+  // useEffect(() => {
+   
+  //     axios.get("http://localhost:8080/teachers",
+  //    {params : {name : "Maharsha"}})
+  
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       setTeachers(response.data);
+  //     });
+    
+    
+  // }, [])
+ 
 
   
 // console.log(currentGadol.Locations[gadolInfoCounter][1])
@@ -49,23 +73,23 @@ export default function GadolBox({
     <Card className="gadolbox" >
       <CardContent>
         <Typography sx={{ fontSize: 27 }} color="text.primary" gutterBottom>
-          {currentGadol.Name}
+          {gadol.name}
         </Typography>
 
         <Typography sx={{ fontSize: 15 }} color="text.secondary">
-          {currentGadol.Fullname}
+          {gadol.fullname}
         </Typography>
-        <Typography sx={{ fontSize: 13, m:0 }} color="text.secondary">
+        {/* <Typography sx={{ fontSize: 13, m:0 }} color="text.secondary">
           {currentGadol.Overview}
-        </Typography>
+        </Typography> */}
         <Card className = "customCard" >
           <CardContent>
             <Typography sx={{ mb: 0.5 }} color="text.primary" align="center">
               {headers[0]}
             </Typography>
-            <Typography sx={{ m: 0 , fontSize : 15}} color="text.secondary">
+            {/* <Typography sx={{ m: 0 , fontSize : 15}} color="text.secondary">
               {currentGadol.Locations[gadolInfoCounter][1]}
-            </Typography>
+            </Typography> */}
             <CardActions>
               <Button
                 variant="contained"
@@ -80,16 +104,16 @@ export default function GadolBox({
 
               <Button
                 variant="contained"
-                disabled={
-                  !(gadolInfoCounter < currentGadol.Locations.length - 1)
-                }
-                onClick={
-                  gadolInfoCounter < currentGadol.Locations.length - 1
-                    ? () => {
-                        increaseGadolInfoCounter();
-                      }
-                    : null
-                }
+                // disabled={
+                //   !(gadolInfoCounter < currentGadol.Locations.length - 1)
+                // }
+                // onClick={
+                //   gadolInfoCounter < currentGadol.Locations.length - 1
+                //     ? () => {
+                //         increaseGadolInfoCounter();
+                //       }
+                //     : null
+                // }
                 size = "small"
               >
                 {headers[2]}
@@ -113,7 +137,7 @@ export default function GadolBox({
               {headers[3]}
             </Typography>
           </AccordionSummary>
-          <AccordionDetails sx={{  m:0 }}>
+          {/* <AccordionDetails sx={{  m:0 }}>
             {currentGadol.Teachers != ""
               ? currentGadol.Teachers.map((teacher) => {
                   return (
@@ -124,7 +148,7 @@ export default function GadolBox({
                   );
                 })
               : null}
-          </AccordionDetails>
+          </AccordionDetails> */}
         </Accordion>
         <Accordion
           expanded={expanded === "panel2"}
@@ -139,7 +163,7 @@ export default function GadolBox({
               {headers[4]}
             </Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          {/* <AccordionDetails>
             {currentGadol.Students != ""
               ? currentGadol.Students.map((student) => {
                   return (
@@ -150,7 +174,8 @@ export default function GadolBox({
                   );
                 })
               : null}
-          </AccordionDetails>
+          </AccordionDetails> */}
+          <AccordionDetails></AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "panel3"}
@@ -163,7 +188,7 @@ export default function GadolBox({
           >
             <Typography sx={{ width: "100%", flexShrink: 0 }}>{headers[5]}</Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          {/* <AccordionDetails>
             {currentGadol.Works != ""
               ? currentGadol.Works.map((work) => {
                   return (
@@ -179,7 +204,7 @@ export default function GadolBox({
                   );
                 })
               : null}
-          </AccordionDetails>
+          </AccordionDetails> */}
         </Accordion>
       </CardContent>
     </Card>

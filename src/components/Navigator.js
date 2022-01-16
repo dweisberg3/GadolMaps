@@ -33,7 +33,7 @@ const useStyles = makeStyles({
 const englishHeaders = ["Feedback", "Rishonim", "Achronim"]
 const hebrewHeaders = ["משוב","ראשונים","אחרונים"]
 
-export default function Navigator({ getGadol, rishonim, achronim, currentGadol , getLanguage, language}) {
+export default function Navigator({ getGadol, rishonim, achronim, currentGadol , getLanguage, language, names}) {
   const [value, setValue] = useState("1");
   const classes = useStyles();
   const [headers, setHeaders] = useState(englishHeaders)
@@ -158,36 +158,21 @@ const handleAlignment = (event, newAlignment) => {
           >
             <List sx={{ width: "100%", flexShrink: 0 }}>
               {" "}
-              {rishonim.map((gadol) => {
+              {names.map((gadol) => {
                 return (
                   <ListItem disablePadding={true}>
                     {" "}
-                    {currentGadol.Name !== gadol.Name ? (
+                    {
                       <ListItemButton
                         disableRipple={true}
                         className={classes.root}
                         onClick={() => getGadol(gadol)}
                         sx= {{fontSize : 15}}
                       >
-                       <Typography sx={{fontSize : 16, pl: 1, width: "100%", flexShrink: 0, textAlign : "left" }}>{gadol.Name}</Typography>
+                       <Typography sx={{fontSize : 16, pl: 1, width: "100%", flexShrink: 0, textAlign : "left" }}>{gadol.name}</Typography>
                       
                       </ListItemButton>
-                    ) : (
-                      <ListItemButton
-                        className={classes.root}
-                        disableRipple={true}
-                        sx={{
-                          backgroundColor: "lightblue",
-
-                          "&.MuiButtonBase-root:hover": {
-                            bgcolor: "lightblue",
-                          },
-                          fontSize : 15,
-                        }}
-                      >    <Typography sx={{ fontSize : 16 ,pl: 1, width: "100%", flexShrink: 0, textAlign : "left" }}>{gadol.Name}</Typography>
-                        
-                      </ListItemButton>
-                    )}
+                }
                   </ListItem>
                 );
               })}
