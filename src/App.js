@@ -222,6 +222,8 @@ const App = () => {
             position={currentPosition}
             gadolInfoCounter={gadolInfoCounter}
             isNewGadol={isNewGadol}
+            students = {gadolStudents}
+            teachers = {gadolTeachers}
           />
         </MapContainer>
       </div>

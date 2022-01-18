@@ -7,7 +7,7 @@ import ArrowheadsPolyline from "./ArrowheadsPolyline.js";
 
 export default function MapItems({
   currentGadol,
-  gadolInfoCounter, position,
+  gadolInfoCounter, position, teachers, students,
   
 }) {
   // const redIcon = new Icon({
@@ -36,6 +36,8 @@ export default function MapItems({
   // const position = currentGadol.Locations[gadolInfoCounter][0];
   console.log(position)
   const map = useMap();
+  console.log(teachers)
+console.log(students)
   // let polyLineCordinates = [];
   // console.log(gadolInfoCounter);
   // for (let i = 0; i <= gadolInfoCounter; i++) {
@@ -80,7 +82,7 @@ export default function MapItems({
        <Marker position={position}>
       <Tooltip>{currentGadol.Name}</Tooltip>
       </Marker>
-
+      {}
       {/* <ArrowheadsPolyline
         positions={polyLineCordinates}
         arrowheads={{ size: '15px' }}
