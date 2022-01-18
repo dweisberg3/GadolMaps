@@ -88,7 +88,7 @@ const App = () => {
       setAchronim(englishAchronim)
       setLanguage("english")
       // if(rishonIndex != -1){
-      //   setCurrentGadol(rishonim[rishonIndex])
+      //   setCurrentGadol(fghfghrishonim[rishonIndex])
       // }
       // else if(achronIndex != -1){
       //   setCurrentGadol(achronim[achronIndex])

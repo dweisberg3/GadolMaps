@@ -105,7 +105,7 @@ console.log(teachers)
               <Button
                 variant="contained"
                 // disabled={
-                //   !(gadolInfoCounter < currentGadol.Locations.length - 1)
+                //   !(gahfghfghdolInfoCounter < currentGadol.Locations.length - 1)
                 // }
                 // onClick={
                 //   gadolInfoCounter < currentGadol.Locations.length - 1
