@@ -18,13 +18,16 @@ const hebrewHeaders = ["תולדותיו","חזור","הבא", "רבותיו","�
 
 export default function GadolBox({
   currentGadol,
-  gadolInfoCounter,
-  increaseGadolInfoCounter,
-  decreaseGadolInfoCounter,
   language,
   gadol,
   teachers,
   students,
+  works,
+  event,
+  handleEventChange,
+  isMinEvent,
+  isMaxEvent,
+  isNew,
 }) {
   const [expanded, setExpanded] = useState(false);
   const [headers, setHeaders] = useState(englishHeaders)
@@ -33,10 +36,10 @@ export default function GadolBox({
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
-  console.log(gadol)
-console.log(gadol.name)
-console.log(students)
-console.log(teachers)
+
+
+  console.log(isMaxEvent)
+  console.log(isMinEvent)
   // useEffect(() => {
   //   if(language === "english"){
   //     setHeaders(englishHeaders)
@@ -87,15 +90,15 @@ console.log(teachers)
             <Typography sx={{ mb: 0.5 }} color="text.primary" align="center">
               {headers[0]}
             </Typography>
-            {/* <Typography sx={{ m: 0 , fontSize : 15}} color="text.secondary">
-              {currentGadol.Locations[gadolInfoCounter][1]}
-            </Typography> */}
+            <Typography sx={{ m: 0 , fontSize : 15}} color="text.secondary">
+              {event}
+            </Typography>
             <CardActions>
               <Button
                 variant="contained"
-                disabled={gadolInfoCounter == 0}
-                onClick={() => {
-                  decreaseGadolInfoCounter();
+                disabled = {isMinEvent}
+                onClick={() => {var increase = false;
+                  handleEventChange(increase); 
                 }}
                 size = "small"
               >
@@ -104,16 +107,10 @@ console.log(teachers)
 
               <Button
                 variant="contained"
-                // disabled={
-                //   !(gahfghfghdolInfoCounter < currentGadol.Locations.length - 1)
-                // }
-                // onClick={
-                //   gadolInfoCounter < currentGadol.Locations.length - 1
-                //     ? () => {
-                //         increaseGadolInfoCounter();
-                //       }
-                //     : null
-                // }
+                disabled = {isMaxEvent}
+                 onClick={() => {var increase = true;
+                   handleEventChange(increase);
+                  }}
                 size = "small"
               >
                 {headers[2]}
@@ -137,9 +134,9 @@ console.log(teachers)
               {headers[3]}
             </Typography>
           </AccordionSummary>
-          {/* <AccordionDetails sx={{  m:0 }}>
-            {currentGadol.Teachers != ""
-              ? currentGadol.Teachers.map((teacher) => {
+          <AccordionDetails sx={{  m:0 }}>
+            {teachers != []
+              ? teachers.map((teacher) => {
                   return (
                     <ListItem disablePadding sx={{ pt: 0, pb: 0 }}>
                       {" "}
@@ -148,7 +145,7 @@ console.log(teachers)
                   );
                 })
               : null}
-          </AccordionDetails> */}
+          </AccordionDetails>
         </Accordion>
         <Accordion
           expanded={expanded === "panel2"}
@@ -163,9 +160,9 @@ console.log(teachers)
               {headers[4]}
             </Typography>
           </AccordionSummary>
-          {/* <AccordionDetails>
-            {currentGadol.Students != ""
-              ? currentGadol.Students.map((student) => {
+          <AccordionDetails>
+            {students != []
+              ? students.map((student) => {
                   return (
                     <ListItem disablePadding sx={{ pt: 0, pb: 0 }}>
                       {" "}
@@ -174,7 +171,7 @@ console.log(teachers)
                   );
                 })
               : null}
-          </AccordionDetails> */}
+          </AccordionDetails>
           <AccordionDetails></AccordionDetails>
         </Accordion>
         <Accordion
@@ -188,9 +185,9 @@ console.log(teachers)
           >
             <Typography sx={{ width: "100%", flexShrink: 0 }}>{headers[5]}</Typography>
           </AccordionSummary>
-          {/* <AccordionDetails>
-            {currentGadol.Works != ""
-              ? currentGadol.Works.map((work) => {
+          <AccordionDetails>
+            {works != []
+              ? works.map((work) => {
                   return (
                     <ListItem disablePadding>
                       {" "}
@@ -204,7 +201,7 @@ console.log(teachers)
                   );
                 })
               : null}
-          </AccordionDetails> */}
+          </AccordionDetails>
         </Accordion>
       </CardContent>
     </Card>

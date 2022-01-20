@@ -34,10 +34,10 @@ export default function MapItems({
 
  
   // const position = currentGadol.Locations[gadolInfoCounter][0];
-  console.log(position)
+  // console.log(position)
   const map = useMap();
-  console.log(teachers)
-console.log(students)
+//   console.log(teachers)
+// console.log(students)
   // let polyLineCordinates = [];
   // console.log(gadolInfoCounter);
   // for (let i = 0; i <= gadolInfoCounter; i++) {

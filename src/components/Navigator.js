@@ -33,7 +33,7 @@ const useStyles = makeStyles({
 const englishHeaders = ["Feedback", "Rishonim", "Achronim"]
 const hebrewHeaders = ["משוב","ראשונים","אחרונים"]
 
-export default function Navigator({ getGadol, rishonim, achronim, currentGadol , getLanguage, language, names}) {
+export default function Navigator({ handleGadolChange, rishonim, achronim, currentGadol , getLanguage, language, names}) {
   const [value, setValue] = useState("1");
   const classes = useStyles();
   const [headers, setHeaders] = useState(englishHeaders)
@@ -166,7 +166,7 @@ const handleAlignment = (event, newAlignment) => {
                       <ListItemButton
                         disableRipple={true}
                         className={classes.root}
-                        onClick={() => getGadol(gadol)}
+                        onClick={() => handleGadolChange(gadol)}
                         sx= {{fontSize : 15}}
                       >
                        <Typography sx={{fontSize : 16, pl: 1, width: "100%", flexShrink: 0, textAlign : "left" }}>{gadol.name}</Typography>
@@ -193,7 +193,7 @@ const handleAlignment = (event, newAlignment) => {
                       <ListItemButton
                         disableRipple={true}
                         className={classes.root}
-                        onClick={() => getGadol(gadol)}
+                        onClick={() => handleGadolChange(gadol)}
                       >
                            <Typography sx={{fontSize : 16, pl: 1, width: "90%", flexShrink: 0, textAlign : "left" }}>{gadol.Name}</Typography>
                       </ListItemButton>
