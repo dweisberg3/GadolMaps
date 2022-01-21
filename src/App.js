@@ -78,7 +78,7 @@ const App = () => {
     // setGadol(theGadol.data)
 
     const teachers = await axios.get("http://localhost:8080/teachers", {params : {name : gadol}})
-      // console.log(teachers.data);
+      console.log(teachers.data);
       setGadolTeachers(teachers.data);
       
   

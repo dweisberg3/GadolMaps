@@ -43,6 +43,9 @@ export default function GadolBox({
 
   console.log(isMaxEvent)
   console.log(isMinEvent)
+  var studentsNames = students.map(student => student.split(" ")[0])
+  console.log(students)
+  students = 0
   // useEffect(() => {
   //   if(language === "english"){
   //     setHeaders(englishHeaders)
@@ -165,8 +168,8 @@ export default function GadolBox({
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            {students != []
-              ? students.map((student) => {
+            {studentsNames != []
+              ? studentsNames.map((student) => {
                   return (
                     <ListItem disablePadding sx={{ pt: 0, pb: 0 }}>
                       {" "}
