@@ -4,6 +4,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ListItemText from "@mui/material/ListItemText";
+import ListItemButton from "@mui/material/ListItemButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {useEffect, useState} from "react";
 import { Card } from "react-bootstrap";
@@ -20,6 +21,7 @@ export default function GadolBox({
   currentGadol,
   language,
   gadol,
+  fullname,
   teachers,
   students,
   works,
@@ -28,6 +30,7 @@ export default function GadolBox({
   isMinEvent,
   isMaxEvent,
   isNew,
+  handleGadolChange,
 }) {
   const [expanded, setExpanded] = useState(false);
   const [headers, setHeaders] = useState(englishHeaders)
@@ -76,11 +79,11 @@ export default function GadolBox({
     <Card className="gadolbox" >
       <CardContent>
         <Typography sx={{ fontSize: 27 }} color="text.primary" gutterBottom>
-          {gadol.name}
+          {gadol}
         </Typography>
 
         <Typography sx={{ fontSize: 15 }} color="text.secondary">
-          {gadol.fullname}
+          {fullname}
         </Typography>
         {/* <Typography sx={{ fontSize: 13, m:0 }} color="text.secondary">
           {currentGadol.Overview}
@@ -140,7 +143,8 @@ export default function GadolBox({
                   return (
                     <ListItem disablePadding sx={{ pt: 0, pb: 0 }}>
                       {" "}
-                      <ListItemText primaryTypographyProps={{ fontSize: "14px" }}  sx={{ m: 0 , ml:2}}>{teacher} </ListItemText>{" "}
+                      {/* <ListItemText primaryTypographyProps={{ fontSize: "14px" }}  sx={{ m: 0 , ml:2}}>{teacher} </ListItemText>{" "} */}
+                      <ListItemButton onClick={() => handleGadolChange(teacher)} sx={{ m: 0, ml:2 }} > {teacher}</ListItemButton>
                     </ListItem>
                   );
                 })
@@ -166,7 +170,8 @@ export default function GadolBox({
                   return (
                     <ListItem disablePadding sx={{ pt: 0, pb: 0 }}>
                       {" "}
-                      <ListItemText primaryTypographyProps={{ fontSize: "14px" }}  sx={{ m: 0, ml:2 }}>{student} </ListItemText>{" "}
+                      {/* <ListItemText primaryTypographyProps={{ fontSize: "14px" }}  sx={{ m: 0, ml:2 }}>{student} </ListItemText>{" "} */}
+                      <ListItemButton onClick={() => handleGadolChange(student)} sx={{ m: 0, ml:2 }}> {student}  </ListItemButton>
                     </ListItem>
                   );
                 })

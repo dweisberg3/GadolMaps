@@ -21,7 +21,8 @@ const App = () => {
   const [gadolTeachers, setGadolTeachers] = useState([])
   const [gadolStudents, setGadolStudents] = useState([])
   const [gadolEvents, setGadolEvents] = useState([])
-  const [gadol, setGadol] = useState({"name" : "Rashi"})
+  const [gadol, setGadol] = useState("Rashi")
+  const [gadolFullName, setGadolFullName] = useState("R' Shlomo Yitzchaki")
   const [gadolWorks, setGadolWorks] = useState([])
   const [currentEvent, setCurrentEvent] = useState(0)
   const [eventText, setEventText] = useState("")
@@ -36,8 +37,12 @@ const App = () => {
       // console.log(response.data);
       // console.log(response.data[0].name)
       // console.log(typeof response.data);
-      setNames(response.data);
-      setGadol(response.data[0])
+      
+      const names = response.data.map((gadol) => gadol.name)
+      setNames(names);
+      console.log(response.data)
+      
+      setGadol(names[0])
       setAxiosLoaded(true)
     });
     
@@ -59,27 +64,28 @@ const App = () => {
 
     setCurrentEvent(0)
    
-    const events = await  axios.get("http://localhost:8080/events", {params : {name : gadol.name}})
+    const events = await  axios.get("http://localhost:8080/events", {params : {name : gadol}})
     
     setGadolEvents(events.data)
     setEventText(events.data[0].event_text)
     setIsMaxEvent(false)
     setIsMinEvent(true)
     
-    const theGadol = await axios.get("http://localhost:8080/gadol" , {params : {name : gadol.name}} )
+    const theGadol = await axios.get("http://localhost:8080/gadol" , {params : {name : gadol}} )
     setCurrentPosition([theGadol.data.latitude, theGadol.data.longitude]);
+    setGadolFullName(theGadol.data.fullname)
     // setGadol(theGadol.data)
 
-    const teachers = await axios.get("http://localhost:8080/teachers", {params : {name : gadol.name}})
+    const teachers = await axios.get("http://localhost:8080/teachers", {params : {name : gadol}})
       // console.log(teachers.data);
       setGadolTeachers(teachers.data);
       
   
-    const students = await axios.get("http://localhost:8080/students", {params : {name : gadol.name}})
+    const students = await axios.get("http://localhost:8080/students", {params : {name : gadol}})
       // console.log(students.data);
       setGadolStudents(students.data);
 
-    const works = await  axios.get("http://localhost:8080/works", {params : {name : gadol.name}})
+    const works = await  axios.get("http://localhost:8080/works", {params : {name : gadol}})
       // console.log(works.data);
       setGadolWorks(works.data);
      
@@ -173,11 +179,13 @@ const App = () => {
         <GadolBox
           currentGadol={currentGadol}
           gadol={gadol}
+          fullname = {gadolFullName}
           students={gadolStudents}
           teachers={gadolTeachers}
           works={gadolWorks}
           language={language}
           handleEventChange = {handleEventChange}
+          handleGadolChange = {handleGadolChange}
           event={eventText}
           isMaxEvent={isMaxEvent}
           isMinEvent={isMinEvent}

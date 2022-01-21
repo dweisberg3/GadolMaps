@@ -169,7 +169,7 @@ const handleAlignment = (event, newAlignment) => {
                         onClick={() => handleGadolChange(gadol)}
                         sx= {{fontSize : 15}}
                       >
-                       <Typography sx={{fontSize : 16, pl: 1, width: "100%", flexShrink: 0, textAlign : "left" }}>{gadol.name}</Typography>
+                       <Typography sx={{fontSize : 16, pl: 1, width: "100%", flexShrink: 0, textAlign : "left" }}>{gadol}</Typography>
                       
                       </ListItemButton>
                 }
