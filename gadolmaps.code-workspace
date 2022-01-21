@@ -4,7 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "..\\..\\nodejs-express-mysql"
+			"path": "..\\..\\GadolMapsBackend"
 		}
 	],
 	"settings": {}

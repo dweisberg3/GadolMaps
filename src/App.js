@@ -66,6 +66,7 @@ const App = () => {
    
     const events = await  axios.get("http://localhost:8080/events", {params : {name : gadol}})
     
+    console.log(events.data)
     setGadolEvents(events.data)
     setEventText(events.data[0].event_text)
     setIsMaxEvent(false)
@@ -82,11 +83,9 @@ const App = () => {
       
   
     const students = await axios.get("http://localhost:8080/students", {params : {name : gadol}})
-      // console.log(students.data);
       setGadolStudents(students.data);
 
     const works = await  axios.get("http://localhost:8080/works", {params : {name : gadol}})
-      // console.log(works.data);
       setGadolWorks(works.data);
      
   };
