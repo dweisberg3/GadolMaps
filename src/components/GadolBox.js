@@ -1,12 +1,12 @@
 import { ListItem } from "@mui/material";
-import { Button, Typography, CardContent, CardActions } from "@mui/material";
+import {Box, Card, Button, Typography, CardContent, CardActions } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ListItemText from "@mui/material/ListItemText";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {useEffect, useState} from "react";
-import { Card } from "react-bootstrap";
+// import { Card } from "react-bootstrap";
 import "./GadolBox.css";
 
 
@@ -46,9 +46,10 @@ export default function GadolBox({
 // console.log(gadolInfoCounter)
 
   return (
-    <Card className="gadolbox" >
-      <CardContent>
-        <Typography sx={{ fontSize: 27 }} color="text.primary" gutterBottom>
+    <Box className="gadolbox" >
+    
+     <Box sx = {{height : 100,border : 1,m : 2,textAlign: 'center'}}>
+        <Typography sx={{ fontSize: 27}} color="text.primary" gutterBottom>
           {currentGadol.Name}
         </Typography>
 
@@ -58,15 +59,17 @@ export default function GadolBox({
         <Typography sx={{ fontSize: 13, m:0 }} color="text.secondary">
           {currentGadol.Overview}
         </Typography>
-        <Card className = "customCard" >
-          <CardContent>
-            <Typography sx={{ mb: 0.5 }} color="text.primary" align="center">
+        </Box>
+       <Box sx={{height : 110, margin : 1}}>
+       <Typography sx={{ margin : 1}} color="text.primary" align="center">
               {headers[0]}
             </Typography>
-            <Typography sx={{ m: 0 , fontSize : 15}} color="text.secondary">
+            <Typography sx={{ m: 4 , fontSize : 15}} color="text.secondary">
               {currentGadol.Locations[gadolInfoCounter][1]}
             </Typography>
-            <CardActions>
+       </Box>
+           
+          <Box sx = {{p: 2, bottom : 0, textAlign : 'center'}}>
               <Button
                 variant="contained"
                 disabled={gadolInfoCounter == 0}
@@ -74,6 +77,7 @@ export default function GadolBox({
                   decreaseGadolInfoCounter();
                 }}
                 size = "small"
+                sx={{ mb: 0.5 , margin : 1, bottom :0}}
               >
                 {headers[1]}
               </Button>
@@ -94,13 +98,11 @@ export default function GadolBox({
               >
                 {headers[2]}
               </Button>
-            </CardActions>
-          </CardContent>
-        </Card>
+              </Box>
 
         <Accordion
           expanded={expanded === "panel1"}
-          sx={{ m:0, p:0 }}
+          sx={{ m:0, p:0, backgroundColor : "#B3CFDF" }}
           onChange={handleChange("panel1")}
         >
           <AccordionSummary
@@ -127,8 +129,10 @@ export default function GadolBox({
           </AccordionDetails>
         </Accordion>
         <Accordion
+        sx={{ m:0, p:0, backgroundColor : "#B3CFDF" }}
           expanded={expanded === "panel2"}
           onChange={handleChange("panel2")}
+          
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -153,6 +157,7 @@ export default function GadolBox({
           </AccordionDetails>
         </Accordion>
         <Accordion
+        sx={{ m:0, p:0, backgroundColor : "#B3CFDF" }}
           expanded={expanded === "panel3"}
           onChange={handleChange("panel3")}
         >
@@ -181,7 +186,7 @@ export default function GadolBox({
               : null}
           </AccordionDetails>
         </Accordion>
-      </CardContent>
-    </Card>
+      
+   </Box>
   );
 }

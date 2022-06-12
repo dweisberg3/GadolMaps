@@ -11,7 +11,8 @@
 }
 
 .customCard {
-  background-color: rgb(230, 238, 238) !important;
+  background-color: rgb(182, 191, 203) !important;
+  height: 25vh;
 }
 
 .gadolName{
@@ -24,12 +25,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.MuiPaper-root {
-  background-color: rgb(230, 238, 238) !important;
+/* .MuiPaper-root {
+  background-color: rgb(255, 255, 255) !important;
   color: black !important;
   
  
-}
+} */
 
 .MuiIconButton-root {
   color: white !important;

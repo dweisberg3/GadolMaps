@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from "react";
 
 import {  MapContainer,  TileLayer, ZoomControl } from "react-leaflet";
+import {isMobile} from 'react-device-detect';
+
 import "./App.css";
 import Navigator from "./components/Navigator.js";
 import GadolBox from "./components/GadolBox.js";
@@ -177,7 +179,12 @@ const App = () => {
     // }
   }, []);
 
-  if (error) {
+  if(isMobile){
+    return (<div style = {{margin:1 + 'em'}}><h1>Thank you for visiting gadolmaps.com!</h1> 
+    <p><br/><strong>This tool is meant to be used in the classroom. Version 1 is only available on desktop. Please visit again from a desktop screen. </strong></p>
+    <p>If you'd like to see tablet or mobile versions of gadolmaps.com, let us know by emailing feedback@gadolmaps.com.</p> </div>)
+  }
+  else if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!rishonimIsLoaded || !achronimIsLoaded  || !hebrewRishonimIsLoaded || !hebrewAchronimIsLoaded) {
     return <div>Loading...</div>;
@@ -200,7 +207,7 @@ const App = () => {
           decreaseGadolInfoCounter={decreaseGadolInfoCounter}
           language = {language}
         />
-        <MapContainer center={currentPosition} maxZoom = {7} minZoom = {4} zoom={4} zoomControl = {false} maxBounds = {[8.12884, -49.72852],[66.28807, 76.55273]}>
+        <MapContainer center={currentPosition} maxZoom = {8} minZoom = {3} zoom={6} zoomControl = {false} maxBounds = {[8.12884, -49.72852],[66.28807, 76.55273]}>
           <TileLayer
             url="https://api.mapbox.com/styles/v1/dweisb/ckuyvslt608od14o4h0cqpblf/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZHdlaXNiIiwiYSI6ImNrdGQzZzQ2aTBicGEyb3BoZjI1YjNwaGkifQ.9LTCnUZDmffDzf7BzqVq5w"
             attribution='Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'

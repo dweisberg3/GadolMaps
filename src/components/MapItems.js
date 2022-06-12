@@ -47,12 +47,13 @@ export default function MapItems({
 
   useEffect(() => {
     
-    map.setMaxZoom(6);
+    map.setMaxZoom(10);
     map.setMinZoom(4);
     map.setMaxBounds([
       [8.12884, -49.72852],
       [66.28807, 76.55273],
     ]);
+    map.flyTo(position, 6, { duration: 1.75, easeLinearity: 0.05 , maxZoom : 2})
 
     // L.control
     //   .zoom({
@@ -64,7 +65,8 @@ export default function MapItems({
 
  
   useEffect(() => {
-    map.panInsideBounds(polyLineCordinates,{ duration: 1.75, easeLinearity: 0.05, maxZoom : 3 })
+    // map.panInsideBounds(polyLineCordinates,{ duration: 1.75, easeLinearity: 0.05, maxZoom : 4 })
+    map.flyTo(position, 6, { duration: 1.75, easeLinearity: 0.05 , maxZoom : 2})
    
   }, [position])
 

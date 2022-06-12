@@ -1,15 +1,18 @@
 [
   {
-    "Name": "Maharal",
-    "Fullname": "R' Yehuda ben Betzalel Loew",
-    "City": "Prague",
-    "Locations": [[[52.400190, 16.927550], "Born in Posen in 1512"], [[50.075539, 14.4378], "Died in 1609 in Prague"]],
-    "Overview": "",
+    "Name": "Bais Yosef",
+    "Fullname": "R' Yosef Caro",
+    "City": "Toleda",
+    "Locations": [[[39.862831, -4.027323], "Born in Toledo, Spain in 1488"], [[38.722252,-9.139337], "In 1492 he along with his family were expelled from Spain and moved to Portugal"],
+                  [[43.706100, 24.896420], "After a short stay in Morroco, he then moved to Nikopolis, which today is in Bulgaria"],
+                  [[41.677132, 26.555716], "Around 1520 he moved to Adrianople. Located in modern day Turkey."],
+                  [[32.969452, 35.497509], "Around 1535 moved to Tzefas. Where we remain rest of his life. Died in 1575"]],
+    "Overview": "Author of the Shulchan Aruch.",
     "Year Born": 1512,
     "Year Died": 1609,
-    "Teachers": [],
-    "Students": ["R' Yom Tov Lipman Heller"],
-    "Works": ["Gur Aryeh", "Gevuros Hashem", "Tiferes Yisroel", "Netzach Yisroel"]
+    "Teachers": ["R Yaakov Bei'Rav"],
+    "Students": ["R' Moshe Cordova (Ramak)", "R' Moshe Alshich"],
+    "Works": ["Bais Yosef", "Shulchan Aruch", "Kesef Mishnah", "Bedek HaBais"]
   },
   {
     "Name": "Vilna Gaon",
