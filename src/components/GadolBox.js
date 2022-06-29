@@ -41,9 +41,7 @@ export default function GadolBox({
     setExpanded(false)
   },[currentGadol])
 
-  
-// console.log(currentGadol.Locations[gadolInfoCounter][1])
-// console.log(gadolInfoCounter)
+
 
   return (
     <Box className="gadolbox" >

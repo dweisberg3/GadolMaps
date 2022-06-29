@@ -72,43 +72,6 @@ const App = () => {
     } 
   }
 
-  // const filterTeachers = (currentGadol) => {
-  //   // console.log(currentGadol)
-  //   console.log(rishonim)
-  //   console.log(currentGadol.Students)
-  //   let teachers = "";
-  //   if (rishonim.includes(currentGadol)) {
-  //     console.log("got hesfsedf")
-  //     teachers = rishonim.filter(gadol =>
-  //       gadol.Students.includes(currentGadol.Name)
-  //     );
-  //   } else if (achronim.includes(currentGadol)) {
-  //     teachers = achronim.filter(gadol =>
-  //       gadol.Students.includes(currentGadol.Name)
-  //     );
-  //   }
-  //   console.log(teachers)
-  //   return teachers
-  // };
-
-  // const filterStudents = (currentGadol) => {
-  //   let students = "";
-  //   // console.log(currentGadol)
-  //   // console.log(rishonim)
-  //   if (rishonim.includes(currentGadol)) {
-  //     console.log("got hesfsedf")
-  //     students = rishonim.filter(gadol =>
-  //       gadol.Teachers.includes(currentGadol.Name)
-  //     );
-  //   } else if (achronim.includes(currentGadol)) {
-  //     students = achronim.filter(gadol =>
-  //       gadol.Teachers.includes(currentGadol.Name)
-  //     );
-  //   }
-
-  //   console.log(students)
-  //   return students;
-  // };
 
   const increaseGadolInfoCounter = () => {
     setGadolInfoCounter(gadolInfoCounter + 1);
@@ -170,13 +133,7 @@ const App = () => {
             setHebrewAchronimIsLoaded(true);
             
           });
-    // Note: it's important to handle errors here
-    // instead of a catch() block so that we don't swallow
-    // exceptions from actual bugs in components.
-    // (error) => {
-    //   setRishonimIsLoaded(true);
-    //   setError(error);
-    // }
+  
   }, []);
 
   if(isMobile){
