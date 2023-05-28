@@ -4,10 +4,10 @@ import {  MapContainer,  TileLayer, ZoomControl } from "react-leaflet";
 import {isMobile} from 'react-device-detect';
 
 import "./App.css";
-import Navigator from "./components/Navigator.js";
-import GadolBox from "./components/GadolBox.js";
+import Navigator from "./components/Navigator";
+import GadolBox from "./components/GadolBox";
 
-import MapItems from "./components/MapItems.js";
+import MapItems from "./components/MapItems";
 
 const App = () => {
   const [rishonim, setRishonim] = useState([]);

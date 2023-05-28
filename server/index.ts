@@ -4,6 +4,9 @@ const port = 3001;
 const path = require('path');
 const obj = require('./db.json');
 
+let s : number = 0;
+
+
 
 
  app.use(express.static(path.join('server', "..",  'db.json')));

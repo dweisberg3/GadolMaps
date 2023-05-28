@@ -8,6 +8,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {useEffect, useState} from "react";
 // import { Card } from "react-bootstrap";
 import "./GadolBox.css";
+import React from "react";
 
 
 const hebrewHeaders = ["תולדותיו","חזור","הבא", "רבותיו","תלמידיו","חיבוריו"]

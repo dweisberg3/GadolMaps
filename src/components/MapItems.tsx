@@ -36,7 +36,7 @@ export default function MapItems({
   const position = currentGadol.Locations[gadolInfoCounter][0];
   console.log(position)
   const map = useMap();
-  let polyLineCordinates = [];
+  let polyLineCordinates : any = [];
   // console.log(gadolInfoCounter);
   for (let i = 0; i <= gadolInfoCounter; i++) {
     polyLineCordinates.push(currentGadol.Locations[i][0]);
